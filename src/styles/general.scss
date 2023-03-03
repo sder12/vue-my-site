@@ -1,0 +1,29 @@
+@use "./partials/variables" as *;
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+
+
+body {
+    width: 100%;
+    // font-family: 'Poppins', sans-serif !important;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        color: inherit;
+    }
+}
