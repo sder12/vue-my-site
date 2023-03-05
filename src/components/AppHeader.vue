@@ -27,8 +27,13 @@ export default {
                         <li class="nav-item ms-dropdown">
                             <a class="nav-link" href="#">WORKS</a>
                             <ul class="ms-dropdown-menu">
-                                <li><a href="#">FrontBack Developer</a></li>
-                                <li><a href="#">Graphic Designer</a></li>
+                                <li>
+                                    <router-link :to="{ name: 'works-developer' }" class="nav-link">Developer</router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{ name: 'works-graphic' }" class="nav-link">Graphic
+                                        Designer</router-link>
+                                </li>
                             </ul>
                         </li>
 
