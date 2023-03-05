@@ -81,46 +81,37 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-main {
-    height: calc(100vh - var(--header-footer-height));
-    overflow: auto;
+section {
+    padding: 3rem 1rem;
 
-    section {
-        padding: 3rem 1rem;
+    p {
+        margin: .3em 0em;
+    }
+}
 
-        p {
-            margin: .3em 0em;
-        }
+#contact-text {
+    background-image: url('../assets/img/stars/star-accent.svg');
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: 1em 1.8em;
+
+
+    .social-svg:hover path {
+        fill: red;
     }
 
-    #contact-text {
-        background-image: url('../assets/img/stars/star-accent.svg');
-        background-repeat: no-repeat;
-        background-size: 5em;
-        background-position: 1em 1.8em;
 
+    #social li {
+        width: 1.8em;
 
-        .social-svg:hover path {
-            fill: red;
-        }
-
-
-        #social li {
-            width: 1.8em;
-
-            &:hover {
-                filter: contrast(30%);
-            }
+        &:hover {
+            filter: contrast(30%);
         }
     }
+}
 
-    #contact-form {
-        padding-left: 3rem;
-        padding-right: 3rem;
-
-
-
-
-    }
+#contact-form {
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 </style>

@@ -12,6 +12,11 @@ body {
     // overflow-y: hidden;
 }
 
+main {
+    height: calc(100vh - var(--header-footer-height));
+    overflow: auto;
+}
+
 img {
     max-width: 100%;
 }

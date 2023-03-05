@@ -9,7 +9,7 @@ export default {
         <div class="row d-flex justify-content-end">
             <div class="col-12 col-lg-6 col-md-8 d-flex justify-content-between ">
                 <span class="ps-2">SARA CETTO</span>
-                <span class="pe-2">© 2022</span>
+                <span class="pe-2">© 2023</span>
             </div>
         </div>
     </footer>
