@@ -2,10 +2,39 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
-
+//RESET
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+.ms-bg {
+    background-color: var(--bgColor);
+}
+
+//FONTS
+body {
 
     p,
     a,
@@ -18,24 +47,91 @@ body {
     h3 {
         font-family: "Black Han Sans", sans-serif !important;
     }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
 }
 
-
-img {
-    max-width: 100%;
-    width: 100%;
+//BORDER
+.ms-border-top {
+    border-top: 1px solid var(--darkColor);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.ms-border-bottom {
+    border-bottom: 1px solid var(--darkColor);
 }
 
+.ms-border-right {
+    border-right: 1px solid var(--darkColor);
+}
 
-a {
-    text-decoration: none;
+.ms-border-left {
+    border-left: 1px solid var(--darkColor);
+}
+
+//BTN
+.ms-btn {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: .3rem 1rem;
+
+    font-family: "Mulish", sans-serif !important;
+    font-weight: bolder;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.ms-btn-black {
+    border: 3px solid var(--darkColor);
+    color: (--darkColor);
 
     &:hover {
-        color: inherit;
+        color: var(--lightColor);
+        background-color: var(--darkColor);
+    }
+}
+
+.ms-btn-purple {
+    border: 3px solid var(--primaryColor);
+    color: var(--primaryColor);
+
+    &:hover {
+        color: var(--lightColor);
+        background-color: var(--primaryColor);
+    }
+}
+
+.ms-btn-orange {
+    border: 3px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+
+    &:hover {
+        color: var(--lightColor);
+        background-color: var(--secondaryColor);
+    }
+}
+
+.ms-btn-yellow {
+    border: 3px solid var(--accentColor);
+    color: var(--accentColor);
+
+    &:hover {
+        color: var(--lightColor);
+        background-color: var(--accentColor);
     }
 }

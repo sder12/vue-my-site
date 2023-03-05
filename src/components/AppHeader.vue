@@ -10,7 +10,7 @@ export default {
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="#">
-                    <img src="../assets/img/logo.svg" alt="logo-img">
+                    <img src="../assets/logo.svg" alt="logo-img">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -28,12 +28,12 @@ export default {
                     <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                                                WORKS </a>
-                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                                 <a class="dropdown-item" href="#">Graphic portfolio</a>
-                                                                 <a class="dropdown-item" href="#">Dev portfolio</a>
-                                                          </div>
-                                                </li> -->
+                                                                    WORKS </a>
+                                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                                     <a class="dropdown-item" href="#">Graphic portfolio</a>
+                                                                     <a class="dropdown-item" href="#">Dev portfolio</a>
+                                                              </div>
+                                                    </li> -->
 
                         <li class="nav-item ms-dropdown">
                             <a class="nav-link" href="#">WORKS</a>
