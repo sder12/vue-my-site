@@ -19,7 +19,7 @@ export default {
     <main class="container">
         <div class="row mt-5">
 
-            <section class="col-5 ms-border-right">
+            <section id="contact-text" class="col-12 col-md-5 ms-border-right px-5">
                 <!-- TITLE -->
                 <h1>Contact <br> Me</h1>
                 <div class="my-5">
@@ -43,8 +43,8 @@ export default {
             </section>
 
             <!-- FORM send email -->
-            <section id="form" class="col-7">
-                <form class="px-5" @submit.prevent="submitForm">
+            <section id="contact-form" class="col-12 col-md-7">
+                <form class="px-xl-5" @submit.prevent="submitForm">
                     <!-- TO -->
                     <div class="mb-3 row">
                         <label for="staticEmail" class="col-2 col-form-label">To:</label>
@@ -93,23 +93,34 @@ main {
         }
     }
 
-    .social-svg:hover path {
-        fill: red;
-    }
+    #contact-text {
+        background-image: url('../assets/img/stars/star-accent.svg');
+        background-repeat: no-repeat;
+        background-size: 5em;
+        background-position: 1em 1.8em;
 
 
-    #social li {
-        width: 1.8em;
+        .social-svg:hover path {
+            fill: red;
+        }
 
-        &:hover {
-            filter: contrast(30%);
+
+        #social li {
+            width: 1.8em;
+
+            &:hover {
+                filter: contrast(30%);
+            }
         }
     }
 
-
-    #form {
+    #contact-form {
         padding-left: 3rem;
         padding-right: 3rem;
+
+
+
+
     }
 }
 </style>

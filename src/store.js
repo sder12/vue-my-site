@@ -27,8 +27,8 @@ export const store = reactive({
     ],
     //SKILLS
     skillsDev: [
-        'html', 'css', 'javascript', 'php', 'mysql', 'bootstrap',
-        'sass', 'vue', 'laravel', 'mysql'
+        'html', 'css', 'javascript', 'php', 'bootstrap',
+        'sass', 'vue', 'laravel', 'mysql', 'node.js'
 
     ],
     skillsGraphic: [

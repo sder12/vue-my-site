@@ -30,9 +30,6 @@ a {
     }
 }
 
-.ms-bg {
-    background-color: var(--bgColor);
-}
 
 //FONTS
 body {
@@ -135,4 +132,30 @@ body {
         color: var(--lightColor);
         background-color: var(--accentColor);
     }
+}
+
+//BACKGROUND
+.ms-bg {
+    background-color: var(--bgColor);
+}
+
+.ms-bg-yellow {
+    background-color: var(--accentColor);
+}
+
+.ms-bg-orange {
+    background-color: var(--secondaryColor);
+}
+
+.ms-bg-purple {
+    background-color: var(--primaryColor);
+}
+
+.ms-bg-black {
+    background-color: var(--darkColor);
+}
+
+//Skills dimension
+.ms-skills {
+    width: 5em;
 }

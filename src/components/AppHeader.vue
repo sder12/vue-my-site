@@ -9,9 +9,11 @@ export default {
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="#">
+
+                <router-link :to="{ name: 'home' }" class="navbar-brand">
                     <img src="../assets/logo.svg" alt="logo-img">
-                </a>
+                </router-link>
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

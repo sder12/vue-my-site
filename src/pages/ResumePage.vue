@@ -44,9 +44,9 @@ export default {
                 <!-- SKILLS -->
                 <div>
                     <p>Web developer</p>
-                    <ul class="d-flex">
+                    <ul class="d-flex flex-wrap">
                         <li v-for="(dev, index) in this.store.skillsDev" :key="index">
-                            <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev">
+                            <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
                         </li>
                     </ul>
                 </div>
@@ -54,7 +54,8 @@ export default {
                     <p>Graphic Designer</p>
                     <ul class="d-flex">
                         <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
-                            <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic">
+                            <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
+                                class="ms-skills">
                         </li>
                     </ul>
                 </div>
