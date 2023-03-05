@@ -1,6 +1,17 @@
 <script>
+import { store } from '../store';
 export default {
-    name: 'HomePage'
+    name: 'HomePage',
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        getImage(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
+        },
+    }
 }
 </script>
 
@@ -82,11 +93,19 @@ export default {
                 <div class="col-6">
                     <div>
                         <span>Web developer</span>
-                        <div>img - img -mg</div>
+                        <ul class="d-flex">
+                            <li v-for="(dev, index) in this.store.skillsDev" :key="index">
+                                <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev">
+                            </li>
+                        </ul>
                     </div>
                     <div>
                         <span>Graphic Designer</span>
-                        <div>img - img -mg</div>
+                        <ul class="d-flex">
+                            <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
+                                <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic">
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
