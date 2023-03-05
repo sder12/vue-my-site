@@ -1,29 +1,50 @@
 <script>
+import { store } from '../store';
 export default {
-    name: 'ContactPage'
+    name: 'ContactPage',
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        getImage(imgPath) {
+            return new URL(`../assets/img/social/${imgPath}`, import.meta.url).href;
+        }
+    }
 }
 </script>
 
 <template>
     <main class="container">
-        <div class="row">
+        <div class="row mt-5">
 
             <section class="col-5 ms-border-right">
+                <!-- TITLE -->
                 <h1>Contact <br> Me</h1>
-                <p class="pe-5 py-4">Thank you for taking the time to visit my portfolio website! If you have any questions
-                    or
-                    inquiries,
-                    please don't hesitate to contact me using the form.
-                    I look forward to hearing from you!</p>
+                <div class="my-5">
+                    <p>Thank you for taking the time to visit my portfolio website!</p>
+                    <p>
+                        If you have any questions
+                        or inquiries, please don't hesitate to contact me using the form.
+                    </p>
+                    <p> I look forward to hearing from you!</p>
+                </div>
                 <!-- SOCIAL -->
-                <div class="ms-bg">
-                    social
+                <div id="social" class="ms-bg ">
+                    <ul class="d-flex justify-content-center py-4 px-3">
+                        <li v-for="(social, index) in this.store.socials" :key="index" class="me-4">
+                            <a :href="social.link" target="_blank">
+                                <img :src="getImage(social.image)" :alt="social.name" :id="`social-svg-${social.name}`">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
             <!-- FORM send email -->
             <section id="form" class="col-7">
-                <form class="px-5">
+                <form class="px-5" @submit.prevent="submitForm">
                     <!-- TO -->
                     <div class="mb-3 row">
                         <label for="staticEmail" class="col-2 col-form-label">To:</label>
@@ -65,8 +86,26 @@ main {
     overflow: auto;
 
     section {
-        padding: 5rem 1rem;
+        padding: 3rem 1rem;
+
+        p {
+            margin: .3em 0em;
+        }
     }
+
+    .social-svg:hover path {
+        fill: red;
+    }
+
+
+    #social li {
+        width: 1.8em;
+
+        &:hover {
+            filter: contrast(30%);
+        }
+    }
+
 
     #form {
         padding-left: 3rem;
