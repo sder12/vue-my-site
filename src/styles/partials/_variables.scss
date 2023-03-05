@@ -5,7 +5,12 @@
     --accentColor: #FFD202;
 
     --darkColor: #201F20;
-    --lightColor: #EEF6F6;
+    --lightColor: #FFFF;
 
     --bgColor: #EEF6F6;
+
+    //DIMENSION
+    --header-height: 70px;
+    --footer-height: 30px;
+    --main-vh: calc(100vh - (var(--header-height) + var(var(--footer-height))));
 }

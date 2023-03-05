@@ -5,12 +5,16 @@ export default {
 </script>
 
 <template>
-    <h1>Font Black hans</h1>
-    <p>Mulish font</p>
+    <main>
+        <h1>Font Black hans</h1>
+        <p>Mulish font</p>
+    </main>
 </template>
 
 <style lang="scss">
 main {
+    height: var(--main-vh);
+
     p {
         color: var(--accentColor);
     }
