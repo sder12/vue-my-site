@@ -20,20 +20,9 @@ export default {
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">HOME</a>
-                    </li>
-
-
-                    <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                                                    WORKS </a>
-                                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                                     <a class="dropdown-item" href="#">Graphic portfolio</a>
-                                                                     <a class="dropdown-item" href="#">Dev portfolio</a>
-                                                              </div>
-                                                    </li> -->
+                        <li class="nav-item">
+                            <router-link :to="{ name: 'home' }" class="nav-link">HOME</router-link>
+                        </li>
 
                         <li class="nav-item ms-dropdown">
                             <a class="nav-link" href="#">WORKS</a>
@@ -45,10 +34,10 @@ export default {
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ABOUT</a>
+                            <router-link :to="{ name: 'about' }" class="nav-link">ABOUT</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">CONTACT</a>
+                            <router-link :to="{ name: 'contact' }" class="nav-link">CONTACT</router-link>
                         </li>
                     </ul>
                 </div>

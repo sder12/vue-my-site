@@ -94,7 +94,7 @@ export default {
     </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 section {
     padding: 2rem 2rem;
 }
