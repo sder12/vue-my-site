@@ -4,15 +4,66 @@ export default {
     name: 'HomePage',
     data() {
         return {
-            store
+            store,
+            currentSliderLeft: 0,
+            currentSliderRight: 1,
+            sliderWorks: [
+                {
+                    title: 'Boolbnb',
+                    cover: '../assets/img/works/developer/boolbnb-cover.png',
+                },
+                {
+                    title: 'Spotify',
+                    cover: '../assets/img/works/developer/spotify-cover.png',
+                },
+                {
+                    title: 'Discord',
+                    cover: '../assets/img/works/developer/discord-cover.png',
+                },
+                {
+                    title: 'Boolzap',
+                    cover: '../assets/img/works/developer/boolzapp-cover.png',
+                }
+
+            ]
         }
     },
     methods: {
         getImage(imgPath) {
             return new URL(imgPath, import.meta.url).href;
         },
-    }
+        prevSlide() {
+            if (this.currentSliderLeft == 0) {
+                this.currentSliderLeft = this.sliderWorks.length - 1;
+            } else {
+                this.currentSliderLeft--
+            }
+
+            if (this.currentSliderRight == 0) {
+                this.currentSliderRight = this.sliderWorks.length - 1;
+            } else {
+                this.currentSliderRight--
+            }
+        },
+        nextSlide() {
+            if (this.currentSliderLeft < this.sliderWorks.length - 1) {
+                this.currentSliderLeft++
+            } else {
+                this.currentSliderLeft = 0;
+            }
+
+
+            if (this.currentSliderRight < this.sliderWorks.length - 1) {
+                this.currentSliderRight++;
+            } else {
+                this.currentSliderRight = 0;
+            }
+        }
+
+    },
+
 }
+
 </script>
 
 <template>
@@ -81,14 +132,31 @@ export default {
             </div>
         </section>
 
+        <!-- SLIDER -->
         <section id="works" class="container ms-border-bottom">
             <div class="row">
                 <h3 class="text-center">Works</h3>
                 <div class="col-12 d-flex justify-content-center">
-                    <div>IMG - img - img</div>
+                    <div class="slider position-relative d-flex justify-content-center ">
+                        <div id="slider-images" class="d-flex justify-content-center align-items-center gap-3">
+                            <img :src="getImage(sliderWorks[currentSliderLeft].cover)"
+                                :alt="sliderWorks[currentSliderLeft].title">
+                            <img :src="getImage(sliderWorks[currentSliderRight].cover)"
+                                :alt="sliderWorks[currentSliderRight].title">
+                        </div>
+                        <div id="slider-controls" class="d-flex justify-content-between">
+                            <button @click="prevSlide" class="ms-btn ms-btn-blak">
+                                Prev
+                            </button>
+                            <button @click="nextSlide" class="ms-btn ms-btn-blak">
+                                Next
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <!-- /SLIDER -->
 
 
         <section id="skills" class="container">
@@ -176,5 +244,26 @@ section #career {
             padding: .5em 0;
         }
     }
+}
+
+// SLIDER
+
+#slider-images {
+    width: 90%;
+    // background-color: blue;
+
+    img {
+        width: calc(90% / 2);
+        height: auto;
+    }
+
+}
+
+#slider-controls {
+    // background-color: red;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 0;
 }
 </style>

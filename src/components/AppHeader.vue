@@ -1,99 +1,197 @@
 <script>
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data() {
+        return {
+            visibleWorklg: false,
+            visibleWorksm: false,
+            hamburgerNavVisible: false,
+        }
+    },
+    methods: {
+        lgWorkClick() {
+            this.visibleWorklg = !this.visibleWorklg
+        },
+        smWorkClick() {
+            this.visibleWorksm = !this.visibleWorksm
+        },
+        closeDropWorkslg() {
+            this.visibleWorklg = false
+        },
+        clickHamburger() {
+            this.hamburgerNavVisible = !this.hamburgerNavVisible
+        },
+        closeDropWorksSm() {
+            this.hamburgerNavVisible = true
+        }
+
+    }
 }
 </script>
 
 <template>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
+    <header class="container-fluid d-flex justify-content-between align-items-center px-4">
+
+        <div id="ms_logo">
+            <router-link :to="{ name: 'home' }" v-on:click="closeDropWorkslg">
+                <img src="../assets/logo.svg" alt="logo-img">
+            </router-link>
+        </div>
+
+        <div id="ms_nav" class="d-none d-sm-block">
+            <ul class="d-flex align-items-center">
+                <li>
+                    <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorkslg">HOME</router-link>
+                </li>
+                <li class="position-relative">
+                    <div v-on:click="lgWorkClick">
+                        <a class="d-flex align-items-center jsutify-content-center" href="#">
+                            WORKS
+                            <!-- CHEVRON -->
+                            <i class="bi bi-chevron-down d-none d-md-block"></i>
+
+                        </a>
+                    </div>
+                    <div id="ms_nav-drop-lg" class="d-flex flex-column gap-2 mt-1 py-3 px-2"
+                        :class="visibleWorklg ? 'd-block' : 'd-none'">
+                        <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorkslg">WEB
+                            DEVELOPER</router-link>
+                        <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorkslg">GRAPHIC
+                            DESIGNER</router-link>
+                    </div>
+                </li>
 
 
-                <router-link :to="{ name: 'home' }" class="navbar-brand">
-                    <img src="../assets/logo.svg" alt="logo-img">
-                </router-link>
+
+                <li>
+                    <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorkslg">ABOUT</router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'contact' }" class="nav-link"
+                        v-on:click="closeDropWorkslg">CONTACT</router-link>
+                </li>
 
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            </ul>
+        </div>
 
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'home' }" class="nav-link">HOME</router-link>
+        <div class="d-block d-sm-none">
+            <h2 v-on:click="clickHamburger" v-if="hamburgerNavVisible == false">
+                <i class="bi bi-x-lg"></i>
+            </h2>
+            <h2 v-on:click="clickHamburger" v-else>
+                <i class="bi bi-list"></i>
+            </h2>
+
+
+
+            <ul id="ms_nav-drop" :class="hamburgerNavVisible ? 'd-none' : 'd-block'">
+                <li>
+                    <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorksSm">HOME</router-link>
+                </li>
+                <li id="ms_nav-drop-work">
+                    <span v-on:click="smWorkClick">
+                        WORKS
+                        <!-- CHEVRON -->
+                        <i class="bi bi-chevron-down"></i>
+                    </span>
+                    <ul :class="visibleWorksm ? 'd-block' : 'd-none'">
+                        <li>
+                            <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorksSm">•
+                                Web Developer</router-link>
                         </li>
-
-                        <li class="nav-item ms-dropdown">
-                            <a class="nav-link" href="#">WORKS</a>
-                            <ul class="ms-dropdown-menu">
-                                <li>
-                                    <router-link :to="{ name: 'works-developer' }" class="nav-link">Developer</router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{ name: 'works-graphic' }" class="nav-link">Graphic
-                                        Designer</router-link>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'about' }" class="nav-link">ABOUT</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'contact' }" class="nav-link">CONTACT</router-link>
+                        <li>
+                            <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorksSm">• Graphic
+                                Designer</router-link>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorksSm">ABOUT</router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'contact' }" class="nav-link"
+                        v-on:click="closeDropWorksSm">CONTACT</router-link>
+                </li>
+            </ul>
+        </div>
+
+
 
     </header>
 </template>
 
 <style lang="scss">
 header {
-    border-bottom: 2px solid var(--darkColor);
-    padding: 0 1em;
+    // border-bottom: 2px solid var(--darkColor);
+    height: var(--header-height);
+    // background-color: pink;
+}
+
+//LOGO
+#ms_logo img {
+    height: calc(var(--header-height) - 10px);
+}
+
+// NAVBAR
+#ms_nav {
     height: var(--header-height);
 
-    // LOGO
-    .navbar-brand img {
-        height: calc(var(--header-height) - 20px);
-    }
+    ul {
+        height: var(--header-height);
 
-    // NAVBAR
-    .navbar-nav>li {
-        margin-left: 4em;
+        &>li {
+            margin-left: 4em;
 
-        a {
-            color: var(--darkColor);
-            font-weight: bold;
-            font-size: 1rem;
-            letter-spacing: 1px;
+            a {
+                color: var(--darkColor);
+                font-weight: bold;
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+
         }
 
     }
+}
 
-    //CUSTOM
-    .ms-dropdown-menu {
-        display: none;
-        position: absolute;
-        z-index: 1;
-        background-color: var(--lightColor);
-        padding: .5rem .8rem;
+#ms_nav-drop-lg {
+    position: absolute;
+    z-index: 99;
+    top: 3em;
+    left: 0em;
+    background-color: var(--bgColor);
+    width: 300%;
+
+
+}
+
+#ms_nav-drop {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    background-color: var(--bgColor);
+    padding: 1.2em 3em 2em;
+    width: 100%;
+
+    &>li {
+        margin-top: .5em;
+        color: var(--darkColor);
+        font-weight: bold;
+        font-size: 1rem;
+        letter-spacing: 1px;
     }
 
-    .ms-dropdown:hover .ms-dropdown-menu {
-        display: block;
-    }
+    #ms_nav-drop-work {
+        ul {
+            padding-top: .3em;
 
-    .ms-dropdown:focus .ms-dropdown-menu {
-        display: block;
+            li {
+                padding: 0em 1em;
+            }
+        }
     }
-
 }
 </style>

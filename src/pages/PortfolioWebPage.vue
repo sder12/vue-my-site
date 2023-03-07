@@ -85,7 +85,7 @@ export default {
     <main class="container-fluid">
         <!-- Introduction -->
         <section class="container">
-            <div class="row py-5">
+            <div class="row pt-5 pb-3">
                 <div class="col-6 py-5 bg-star">
                     <h2 class="ms-border-bottom w-50">Works</h2>
                     <h3>Jr. Full Stack <br>
