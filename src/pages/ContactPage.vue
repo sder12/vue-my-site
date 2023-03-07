@@ -19,7 +19,7 @@ export default {
     <main class="container">
         <div class="row mt-5">
 
-            <section id="contact-text" class="col-12 col-md-5 ms-border-right px-5">
+            <section id="contact-text" class="col-12 col-md-5 ms-border-right px-md-5">
                 <!-- TITLE -->
                 <h1>Contact <br> Me</h1>
                 <div class="my-5">
@@ -32,7 +32,7 @@ export default {
                 </div>
                 <!-- SOCIAL -->
                 <div id="social" class="ms-bg ">
-                    <ul class="d-flex justify-content-center py-4 px-3">
+                    <ul class="d-flex justify-content-center py-4 px-md-3 ">
                         <li v-for="(social, index) in this.store.socials" :key="index" class="me-4">
                             <a :href="social.link" target="_blank">
                                 <img :src="getImage(social.image)" :alt="social.name" :id="`social-svg-${social.name}`">
@@ -44,7 +44,7 @@ export default {
 
             <!-- FORM send email -->
             <section id="contact-form" class="col-12 col-md-7">
-                <form class="px-xl-5" @submit.prevent="submitForm">
+                <form @submit.prevent="submitForm">
                     <!-- TO -->
                     <div class="mb-3 row">
                         <label for="staticEmail" class="col-2 col-form-label">To:</label>

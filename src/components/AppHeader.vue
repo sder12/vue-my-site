@@ -7,7 +7,7 @@ export default {
         return {
             visibleWorklg: false,
             visibleWorksm: false,
-            hamburgerNavVisible: false,
+            hamburgerNavVisible: true,
         }
     },
     methods: {
@@ -40,6 +40,8 @@ export default {
             </router-link>
         </div>
 
+
+        <!-- LG NAVBAR -->
         <div id="ms_nav" class="d-none d-sm-block">
             <ul class="d-flex align-items-center">
                 <li>
@@ -125,7 +127,7 @@ export default {
 
 <style lang="scss">
 header {
-    // border-bottom: 2px solid var(--darkColor);
+    border-bottom: 2px solid var(--darkColor);
     height: var(--header-height);
     // background-color: pink;
 }
@@ -170,6 +172,7 @@ header {
 
 #ms_nav-drop {
     position: absolute;
+    z-index: 99;
     top: var(--header-height);
     right: 0;
     background-color: var(--bgColor);

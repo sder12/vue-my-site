@@ -67,9 +67,9 @@ export default {
 </script>
 
 <template>
-    <main class="container-fluid">
+    <main class="container-fluid container-lg">
 
-        <section id="jumbotron" class="container ms-border-bottom ">
+        <section id="jumbotron" class="ms-border-bottom ">
             <div class="row py-5">
                 <!-- TITLE -->
                 <div id="title" class="col col-lg-6">
@@ -98,10 +98,10 @@ export default {
             </div>
         </section>
 
-        <section id="presentation" class="container ms-border-bottom">
-            <div class="row">
+        <section id="presentation" class="ms-border-bottom">
+            <div class="row d-flex">
                 <!-- SELFIE + TEXT -->
-                <div class="col col-lg-6 ms-border-right">
+                <div class="col-12 col-lg-6 ">
                     <div class="ms-bg py-4 px-5 me-2 d-flex flex-column">
                         <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50 align-self-end">
                         <p class="w-75 align-self-center">
@@ -112,8 +112,8 @@ export default {
                     </div>
                 </div>
                 <!-- CARREER -->
-                <div id="career" class="col col-lg-6 d-flex flex-column justify-content-center">
-                    <div class="ms-border-bottom" id="bg-star-dev">
+                <div id="career" class="col col-lg-6 d-flex flex-lg-column justify-content-center">
+                    <div id="bg-star-dev" class="ms_jr-border">
                         <h3>Jr. Full Stack <br>
                             Web
                             Developer</h3>
@@ -133,7 +133,7 @@ export default {
         </section>
 
         <!-- SLIDER -->
-        <section id="works" class="container ms-border-bottom">
+        <section id="works" class="ms-border-bottom">
             <div class="row">
                 <h3 class="text-center">Works</h3>
                 <div class="col-12 d-flex justify-content-center">
@@ -142,15 +142,16 @@ export default {
                             <img :src="getImage(sliderWorks[currentSliderLeft].cover)"
                                 :alt="sliderWorks[currentSliderLeft].title">
                             <img :src="getImage(sliderWorks[currentSliderRight].cover)"
-                                :alt="sliderWorks[currentSliderRight].title">
+                                :alt="sliderWorks[currentSliderRight].title" class="second-slider-img">
                         </div>
                         <div id="slider-controls" class="d-flex justify-content-between">
-                            <button @click="prevSlide" class="ms-btn ms-btn-blak">
-                                Prev
-                            </button>
-                            <button @click="nextSlide" class="ms-btn ms-btn-blak">
-                                Next
-                            </button>
+                            <a class="fs-1" @click="prevSlide">
+                                <i class=" bi bi-arrow-left-circle"></i>
+                            </a>
+                            <a class="fs-1" @click="nextSlide">
+                                <i class=" bi bi-arrow-right-circle"></i>
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -159,7 +160,7 @@ export default {
         <!-- /SLIDER -->
 
 
-        <section id="skills" class="container">
+        <section id="skills">
             <div class="row ms-bg">
                 <div class="col-12 col-md-5">
                     <h3>Skills</h3>
@@ -231,6 +232,10 @@ section #career {
     }
 }
 
+.ms_jr-border {
+    border-bottom: 1px solid var(--darkColor);
+}
+
 // SKILLS
 #skills .row {
     padding: 3em 2em;
@@ -247,7 +252,6 @@ section #career {
 }
 
 // SLIDER
-
 #slider-images {
     width: 90%;
     // background-color: blue;
@@ -256,14 +260,36 @@ section #career {
         width: calc(90% / 2);
         height: auto;
     }
-
 }
 
+#slider-images .second-slider-img {
+    display: block;
+}
+
+//slider-controller
 #slider-controls {
-    // background-color: red;
     width: 100%;
     position: absolute;
     top: 40%;
     left: 0;
+}
+
+
+
+
+//MEDIA QUERY
+@media screen and (max-width: 992px) {
+    .ms_jr-border {
+        border-bottom: 0px solid var(--darkColor);
+    }
+
+    #slider-images .second-slider-img {
+        display: none;
+    }
+
+    #slider-images {
+        width: 100%;
+    }
+
 }
 </style>
