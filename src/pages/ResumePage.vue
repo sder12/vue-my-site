@@ -21,52 +21,56 @@ export default {
             <div class="row">
 
                 <!-- LEFT -->
-                <section class="col-4 ms-border-right">
-                    <div>
+                <section class="col-4 my-5 ms-border-right">
+                    <!-- TITLE -->
+                    <div id="title">
                         <h1>Sara Cetto</h1>
                         <p>Here you can read my cv or downloading it, by clicking
                             the button belove:</p>
                         <a href="#" class="ms-btn ms-btn-black"> DOWNLOAD CV</a>
                     </div>
-                    <div class="ms-bg">
+                    <!-- CONTACT-->
+                    <div id="contact" class="ms-bg text-center py-5">
                         <img src="../assets/img/sara-foto.png" alt="sara-foto">
-                        <p>Currently based in Trento, Italy.</p>
-                        <ul class="d-flex justify-content-center">
+                        <p class="my-3">Currently based in Trento, Italy.</p>
+                        <ul class="d-flex justify-content-center gap-3">
                             <li v-for="(social, index) in this.store.socials" :key="index">
                                 <a :href="social.link" target="_blank">
                                     <img :src="getImage(`../assets/img/social/${social.image}`)" :alt="social.name">
                                 </a>
                             </li>
                         </ul>
-
                         <a href=""> sara.cetto@gmail.com</a>
                     </div>
-
                     <!-- SKILLS -->
-                    <div>
-                        <p>Web developer</p>
-                        <ul class="d-flex flex-wrap">
-                            <li v-for="(dev, index) in this.store.skillsDev" :key="index">
-                                <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p>Graphic Designer</p>
-                        <ul class="d-flex">
-                            <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
-                                <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
-                                    class="ms-skills">
-                            </li>
-                        </ul>
+                    <div id="skills">
+                        <div class="mb-5">
+                            <p class="fw-bold">Web developer</p>
+                            <ul class="d-flex flex-wrap">
+                                <li v-for="(dev, index) in this.store.skillsDev" :key="index">
+                                    <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev"
+                                        class="ms-skills">
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="fw-bold">Graphic Designer</p>
+                            <ul class="d-flex flex-wrap">
+                                <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
+                                    <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
+                                        class="ms-skills">
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
                 <!-- RIGHT -->
-                <section class="col-8">
+                <section class="col-8 my-5">
                     <!-- PRESENTATION -->
-                    <div>
-                        <p>Durante il mio percorso di studi
+                    <div id="presentation" class="d-flex justify-content-end pe-5">
+                        <p class="col col-6">
+                            Durante il mio percorso di studi
                             di grafica sono entrata pù volte
                             in contatto con il mondo della programmazione. Sono rimasta affascinata dalle sue potenzialità,
                             in particolare quando applicate alla programmazione web.
@@ -76,43 +80,45 @@ export default {
                     </div>
 
                     <!-- EDUCATION -->
-                    <div>
-                        <h3 class="ms-bg">Education</h3>
-                        <div class="row ms-border-bottom" v-for="(education, index) in store.educations" :key="index">
+                    <div id="education" class="mt-4">
+                        <h3 class="ms-bg py-3 px-4">Education</h3>
+                        <div class="row ms-border-bottom py-4 ps-5" v-for="(education, index) in store.educations"
+                            :key="index">
                             <div class="col-1">
                                 <img :src="getImage(`../assets/img/education/${education.image}`)" :alt="education.title">
                             </div>
                             <div class="col-10">
-                                <p>{{ education.title }}</p>
-                                <p>{{ education.subtitle }}</p>
-                                <p v-if="education.translation"> {{ education.translation }}</p>
-                                <p>{{ education.period }}</p>
-                                <p>{{ education.description }}</p>
+                                <p class="title mb-1">{{ education.title }}</p>
+                                <p class="subtitle mb-1">{{ education.subtitle }}</p>
+                                <p class="translation mb-1" v-if="education.translation"> {{ education.translation }}</p>
+                                <p class="period">{{ education.period }}</p>
+                                <p class="description">{{ education.description }}</p>
                             </div>
                         </div>
 
                     </div>
                     <!-- EXPERIENCE -->
-                    <div>
-                        <h3 class="ms-bg">Experience</h3>
-                        <div class="row ms-border-bottom" v-for="(experience, index) in store.experiences" :key="index">
+                    <div id="experience" class="mt-4">
+                        <h3 class="ms-bg py-3 px-4">Experience</h3>
+                        <div class="row ms-border-bottom py-4 ps-5" v-for="(experience, index) in store.experiences"
+                            :key="index">
                             <div class="col-1">
                                 <img v-if="experience.image" :src="getImage(`../assets/img/education/${experience.image}`)"
                                     :alt="experience.title">
                             </div>
                             <div class="col-10">
-                                <p>{{ experience.title }}</p>
-                                <p>{{ experience.subtitle }}</p>
-                                <p>{{ experience.period }}</p>
-                                <p v-if="experience.description">{{ experience.description }}</p>
+                                <p class="title mb-1">{{ experience.title }}</p>
+                                <p class="subtitle mb-1">{{ experience.subtitle }}</p>
+                                <p class="period">{{ experience.period }}</p>
+                                <p class="description" v-if="experience.description">{{ experience.description }}</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- LANGUAGE -->
-                    <div>
-                        <h3 class="ms-bg">Languages</h3>
-                        <ul class="d-flex justify-content-center gap-5">
+                    <div id="languages" class="mt-4">
+                        <h3 class="ms-bg py-3 px-4">Languages</h3>
+                        <ul class="d-flex justify-content-center gap-5 my-5">
                             <li v-for="(language, index) in store.languages" :key="index" class="d-flex flex-column gap-2">
                                 <img :src="getImage(`../assets/img/languages/${language.image}`)" :alt="language.name">
                                 <span class="text-center">{{ language.level }}</span>
@@ -125,4 +131,63 @@ export default {
     </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#title {
+    padding: 2rem 5rem;
+    background-image: url('../assets/img/stars/star-accent.svg');
+    background-repeat: no-repeat;
+    background-size: 4em;
+    background-position: 3em 1em;
+
+    img {
+        width: .9em;
+    }
+}
+
+#contact li img {
+    width: 2em;
+}
+
+#skills {
+    padding: 2em 4em;
+}
+
+#education {
+    img {
+        width: 4em;
+    }
+
+
+    .title {
+        color: var(--secondaryColor);
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-weight: bold;
+    }
+
+    .period {
+        font-style: italic;
+    }
+
+    .translation {
+        color: grey;
+    }
+}
+
+#experience {
+    .title {
+        color: var(--primaryColor);
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-weight: bold;
+    }
+
+    .period {
+        font-style: italic;
+    }
+}
+</style>

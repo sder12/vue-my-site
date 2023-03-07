@@ -133,5 +133,6 @@ export const store = reactive({
             link: 'https://smallcaps.bigcartel.com/',
             image: 'small-caps.png'
         },
-    ]
+    ],
+
 });
