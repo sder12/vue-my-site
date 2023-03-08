@@ -72,7 +72,7 @@ export const store = reactive({
             translation: '',
             period: 'Professionalizing course | Aug 2022 - Feb 2023',
             description: 'Six-months intensive course with the aim of learning FrontEnd & BackEnd languages ​​and technologies. Daily execution of practical exercises to consolidate the information learned during the theoretical lessons',
-            link: '',
+            link: 'https://boolean.careers/corso/full-stack-web-development',
             image: 'boolean.png'
         },
         {
@@ -81,8 +81,8 @@ export const store = reactive({
             translation: 'Práticas Tipográficas e Editoriais Contemporâneas',
             period: 'Master Degree | Oct 2019 - Feb 2022',
             description: 'Course focused on editorial production and typographic design dissertation on media in the post-digital era: differences between digital and paper publication',
-            link: '',
-            image: 'iuav.png'
+            link: 'https://www.belasartes.ulisboa.pt/en/cursos/mestrados/praticastipograficas/',
+            image: 'ulisboa.png'
         },
         {
             title: 'University IUAV of Venice',
@@ -90,8 +90,8 @@ export const store = reactive({
             translation: 'Disegno industriale e multimedia ',
             period: 'Bachelor Degree | Oct 2014 - Oct 2017',
             description: 'consolidation of cultural, historical and design foundations related to the world of graphics and product design.',
-            link: '',
-            image: 'ulisboa.png'
+            link: 'https://www.iuav.it/Didattica1/lauree/TRIENNALI/Design-del1//',
+            image: 'iuav.png'
         },
     ],
 
@@ -103,7 +103,7 @@ export const store = reactive({
             translation: '',
             period: 'Aug 2022 - Feb 2023',
             description: 'full-time course lasting 700 hours, divided into theoretical lessons and practical exercises of increasing difficulty, published on Github. Replication of web applications e.g. Spotify Web, Netflix, DC comics, etc. Final project developed in team',
-            link: '',
+            link: 'https://boolean.careers/',
             image: 'boolean.png'
         },
         {
@@ -112,7 +112,7 @@ export const store = reactive({
             translation: '',
             period: 'Apr 2012 - Nov 2022',
             description: '',
-            link: '',
+            link: 'https://www.instagram.com/azienda.agricola.cetto/?hl=it',
             image: 'cetto-farm.png'
         },
         {
@@ -121,7 +121,7 @@ export const store = reactive({
             translation: '',
             period: 'May 2017',
             description: '',
-            link: '',
+            link: 'https://www.labiennale.org/it',
             image: 'biennale.png'
         },
         {

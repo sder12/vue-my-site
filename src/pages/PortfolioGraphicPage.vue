@@ -13,7 +13,8 @@ export default {
                     col: 6,
                     tech: 'HTML CSS JS AI',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    git: "https://github.com/sder12/vue-boolzapp",
+                    git: "https://fontsie.net/",
+                    btnText: "fontsie.net"
                 },
                 {
                     title: "Boolzapp",
@@ -41,7 +42,7 @@ export default {
         <section class="container">
             <div class="row pt-5 pb-3">
                 <div class="col-6 py-5 bg-star">
-                    <h2 class="ms-border-bottom w-50">Works</h2>
+                    <h2 class="ms-border-bottom w-50 pb-3">Works</h2>
                     <h3>Graphic <br>
                         Designer</h3>
                     <p>Here you take a look at my projects </p>
@@ -59,7 +60,8 @@ export default {
         <!-- Works -->
         <section class="row">
             <!-- STATIC -->
-            <div v-for="(work, index) in graphicWorks" :key="index" :class="`ms-bg-${work.bgcolor} col-${work.col}`"
+            <div v-for="(work, index) in graphicWorks" :key="index"
+                :class="`ms-bg-${work.bgcolor} col-12 col-md-${work.col}`"
                 class="dev-works d-flex align-items-center justify-content-center position-relative">
 
                 <!-- Visible Img -->
@@ -72,9 +74,12 @@ export default {
                     <p class="w-75 text-center">{{ work.description }}</p>
 
                     <p class="fw-bold">{{ work.tech }}</p>
+
+
+
                     <div class="d-flex gap-3">
-                        <a :href="work.git" target="_blank" class="ms-btn ms-btn-yellow my-3">fontsie.net</a>
-                        <a href="#" class="ms-btn ms-btn-orange my-3">details</a>
+                        <a :href="work.git" target="_blank" class="ms-btn ms-btn-yellow my-3">{{ work.btnText }}</a>
+                        <!-- <a href="#" class="ms-btn ms-btn-orange my-3">details</a> -->
                     </div>
                 </div>
                 <!-- / HOVER-->
@@ -82,11 +87,16 @@ export default {
             </div>
             <!-- / STATIC -->
         </section>
+        <h2 class="text-center my-5"> <i class="bi bi-cone"></i> Work in progress...</h2>
     </main>
 </template>
 
 
 <style lang="scss" scoped>
+i {
+    color: var(--secondaryColor);
+}
+
 .bg-star {
     background-image: url('../assets/img/stars/star-secondary.svg');
     background-repeat: no-repeat;
@@ -101,19 +111,12 @@ export default {
 
 
 .dev-works {
-    height: 30em;
+    padding: 2rem 10rem;
     cursor: pointer;
 
     &:hover .hover_img {
         opacity: 1;
     }
-
-    .cover_img {
-        height: 25em;
-
-    }
-
-
 
     //HOVER
     .hover_img {

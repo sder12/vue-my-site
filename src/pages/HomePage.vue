@@ -8,6 +8,7 @@ export default {
             currentSliderLeft: 0,
             currentSliderRight: 1,
             sliderWorks: [
+                //BAkery dc-comics Boolfix dropbox
                 {
                     title: 'Boolbnb',
                     cover: '../assets/img/works/developer/boolbnb-cover.png',
@@ -23,7 +24,15 @@ export default {
                 {
                     title: 'Boolzap',
                     cover: '../assets/img/works/developer/boolzapp-cover.png',
-                }
+                },
+                {
+                    title: 'Bakery',
+                    cover: '../assets/img/works/developer/bakery-cover.png',
+                },
+                {
+                    title: 'Dropbox',
+                    cover: '../assets/img/works/developer/dropbox-cover.png',
+                },
 
             ]
         }
@@ -67,7 +76,7 @@ export default {
 </script>
 
 <template>
-    <main class="container-fluid container-lg">
+    <main class="container-fluid px-5">
 
         <section id="jumbotron" class="ms-border-bottom ">
             <div class="row py-5">
@@ -83,16 +92,20 @@ export default {
 
                 <!-- PRESENTATION -->
                 <div class="col col-lg-6 d-flex flex-column justify-content-end align-items-start pe-5">
+
                     <p class="ps-5 ps-lg-0 pe-lg-4">
-                        Welcome to my website portfolio! <br>
-                        My name is Sara, and I am a Junior Full Stack Web Developer and Graphic Designer with a passion
-                        for creating beautiful and functional websites. <br>
-                        On this site, you will be able to see my works
-                        and my personal resume. <br>
+                    Welcome to my website portfolio! <br>
+                    My name is Sara, and I am a <strong>Junior Full Stack Web Developer</strong> and
+                    <strong> Graphic Designer</strong>
+                    with a passion
+                    for creating beautiful and functional websites. <br>
+                    On this site, you will be able to see my works
+                    and my personal resume. <br>
                         Thank you for visiting, and have a great day!
                     </p>
                     <div class="ps-5 ps-lg-0">
-                        <a href="" class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
+                        <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
+                            class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
                     </div>
                 </div>
             </div>
@@ -135,7 +148,8 @@ export default {
         <!-- SLIDER -->
         <section id="works" class="ms-border-bottom">
             <div class="row">
-                <h3 class="text-center">Works</h3>
+                <h3 class="text-center mb-4">Works</h3>
+
                 <div class="col-12 d-flex justify-content-center">
                     <div class="slider position-relative d-flex justify-content-center ">
                         <div id="slider-images" class="d-flex justify-content-center align-items-center gap-3">
@@ -155,6 +169,15 @@ export default {
                         </div>
                     </div>
                 </div>
+
+                <!-- <div class="col-12 d-flex justify-content-center align-items-center">
+                                                                        <p class="w-75 text-center">
+                                                                            On this website, you will find examples of my work in both web development and graphic
+                                                                            design, including websites, logos, print materials, and more.
+                                                                            I approach each project with creativity,
+                                                                            attention to detail, and a dedication to delivering high-quality results.
+                                                                        </p>
+                                                                    </div> -->
             </div>
         </section>
         <!-- /SLIDER -->
@@ -272,6 +295,11 @@ section #career {
     position: absolute;
     top: 40%;
     left: 0;
+
+    a {
+        cursor: pointer;
+    }
+
 }
 
 

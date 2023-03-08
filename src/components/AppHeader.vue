@@ -8,8 +8,10 @@ export default {
             visibleWorklg: false,
             visibleWorksm: false,
             hamburgerNavVisible: true,
+
         }
     },
+
     methods: {
         lgWorkClick() {
             this.visibleWorklg = !this.visibleWorklg
@@ -26,6 +28,7 @@ export default {
         closeDropWorksSm() {
             this.hamburgerNavVisible = true
         }
+
 
     }
 }
@@ -45,10 +48,12 @@ export default {
         <div id="ms_nav" class="d-none d-sm-block">
             <ul class="d-flex align-items-center">
                 <li>
-                    <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorkslg">HOME</router-link>
+                    <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorkslg"
+                        active-class="active-link">HOME</router-link>
+                    <!-- :class="currentRoute.name == 'home': 'fw-bold' : ''" -->
                 </li>
                 <li class="position-relative">
-                    <div v-on:click="lgWorkClick">
+                    <div v-on:click="lgWorkClick" :class="visibleWorklgActive ? 'active-link' : ''">
                         <a class="d-flex align-items-center jsutify-content-center" href="#">
                             WORKS
                             <!-- CHEVRON -->
@@ -58,9 +63,11 @@ export default {
                     </div>
                     <div id="ms_nav-drop-lg" class="d-flex flex-column gap-2 mt-1 py-3 px-2"
                         :class="visibleWorklg ? 'd-block' : 'd-none'">
-                        <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorkslg">WEB
+                        <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorkslg"
+                            active-class="active-work-link">WEB
                             DEVELOPER</router-link>
-                        <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorkslg">GRAPHIC
+                        <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorkslg"
+                            active-class="active-work-link">GRAPHIC
                             DESIGNER</router-link>
                     </div>
                 </li>
@@ -68,11 +75,12 @@ export default {
 
 
                 <li>
-                    <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorkslg">ABOUT</router-link>
+                    <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorkslg"
+                        active-class="active-link">ABOUT</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'contact' }" class="nav-link"
-                        v-on:click="closeDropWorkslg">CONTACT</router-link>
+                    <router-link :to="{ name: 'contact' }" class="nav-link" v-on:click="closeDropWorkslg"
+                        active-class="active-link">CONTACT</router-link>
                 </li>
 
 
@@ -80,18 +88,21 @@ export default {
         </div>
 
         <div class="d-block d-sm-none">
-            <h2 v-on:click="clickHamburger" v-if="hamburgerNavVisible == false">
+
+            <h2 v-on:click="clickHamburger" v-if="hamburgerNavVisible == false" class="btn-nav-sm">
                 <i class="bi bi-x-lg"></i>
             </h2>
-            <h2 v-on:click="clickHamburger" v-else>
+            <h2 v-on:click="clickHamburger" v-else class="btn-nav-sm">
                 <i class="bi bi-list"></i>
             </h2>
 
 
 
+
             <ul id="ms_nav-drop" :class="hamburgerNavVisible ? 'd-none' : 'd-block'">
                 <li>
-                    <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorksSm">HOME</router-link>
+                    <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorksSm"
+                        active-class="active-md-link">HOME</router-link>
                 </li>
                 <li id="ms_nav-drop-work">
                     <span v-on:click="smWorkClick">
@@ -101,21 +112,24 @@ export default {
                     </span>
                     <ul :class="visibleWorksm ? 'd-block' : 'd-none'">
                         <li>
-                            <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorksSm">•
+                            <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorksSm"
+                                active-class="active-md-link">•
                                 Web Developer</router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorksSm">• Graphic
+                            <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorksSm"
+                                active-class="active-md-link">• Graphic
                                 Designer</router-link>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorksSm">ABOUT</router-link>
+                    <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorksSm"
+                        active-class="active-md-link">ABOUT</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'contact' }" class="nav-link"
-                        v-on:click="closeDropWorksSm">CONTACT</router-link>
+                    <router-link :to="{ name: 'contact' }" class="nav-link" v-on:click="closeDropWorksSm"
+                        active-class="active-md-link">CONTACT</router-link>
                 </li>
             </ul>
         </div>
@@ -126,6 +140,16 @@ export default {
 </template>
 
 <style lang="scss">
+.active-link {
+    border-top: 1px solid black;
+}
+
+.active-md-link,
+.active-work-link {
+    background-color: white;
+}
+
+
 header {
     border-bottom: 2px solid var(--darkColor);
     height: var(--header-height);
@@ -196,5 +220,11 @@ header {
             }
         }
     }
+}
+
+.btn-nav-sm {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-top: .5rem;
 }
 </style>

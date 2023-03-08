@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <main class="container-fluid container-lg">
+    <main class="container-fluid ">
 
         <div class="row">
 
@@ -27,7 +27,8 @@ export default {
                     <h1>Sara Cetto</h1>
                     <p>Here you can read my cv or downloading it, by clicking
                         the button belove:</p>
-                    <a href="#" class="ms-btn ms-btn-black"> DOWNLOAD CV</a>
+                    <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
+                        class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
                 </div>
                 <!-- CONTACT-->
                 <div id="contact" class="ms-bg text-center py-5">
@@ -40,7 +41,7 @@ export default {
                             </a>
                         </li>
                     </ul>
-                    <a href=""> sara.cetto@gmail.com</a>
+                    <span> sara.cetto@gmail.com</span>
                 </div>
                 <!-- SKILLS -->
                 <div id="skills">
@@ -68,15 +69,15 @@ export default {
             <section class="col-12 col-md-8 my-5">
                 <!-- PRESENTATION -->
                 <!-- <div id="presentation" class="d-flex justify-content-end pe-5">
-                                                                                                                    <p class="col col-6 d-none d-md-block">
-                                                                                                                        Durante il mio percorso di studi
-                                                                                                                        di grafica sono entrata pù volte
-                                                                                                                        in contatto con il mondo della programmazione. Sono rimasta affascinata dalle sue potenzialità,
-                                                                                                                        in particolare quando applicate alla programmazione web.
-                                                                                                                        Per questo ho deciso di ampliare
-                                                                                                                        le mie conoscenze mettendomi
-                                                                                                                        in gioco in questo settore.</p>
-                                                                                                                </div> -->
+                                                                                                                                                                                            <p class="col col-6 d-none d-md-block">
+                                                                                                                                                                                                Durante il mio percorso di studi
+                                                                                                                                                                                                di grafica sono entrata pù volte
+                                                                                                                                                                                                in contatto con il mondo della programmazione. Sono rimasta affascinata dalle sue potenzialità,
+                                                                                                                                                                                                in particolare quando applicate alla programmazione web.
+                                                                                                                                                                                                Per questo ho deciso di ampliare
+                                                                                                                                                                                                le mie conoscenze mettendomi
+                                                                                                                                                                                                in gioco in questo settore.</p>
+                                                                                                                                                                                        </div> -->
 
                 <!-- EDUCATION -->
                 <div id="education" class="mt-4">
@@ -86,8 +87,10 @@ export default {
                             <img :src="getImage(`../assets/img/education/${education.image}`)" :alt="education.title">
                         </div>
                         <div class="col-10">
-                            <p class="title mb-1">{{ education.title }}</p>
-                            <p class="subtitle mb-1">{{ education.subtitle }}</p>
+                            <a :href="education.link" target="blank">
+                                <p class="title mb-1">{{ education.title }}</p>
+                                <p class="subtitle mb-1">{{ education.subtitle }}</p>
+                            </a>
                             <p class="translation mb-1" v-if="education.translation"> {{ education.translation }}</p>
                             <p class="period">{{ education.period }}</p>
                             <p class="description">{{ education.description }}</p>
@@ -104,8 +107,10 @@ export default {
                                 :alt="experience.title">
                         </div>
                         <div class="col-10">
-                            <p class="title mb-1">{{ experience.title }}</p>
-                            <p class="subtitle mb-1">{{ experience.subtitle }}</p>
+                            <a :href="experience.link" target="blank">
+                                <p class="title mb-1">{{ experience.title }}</p>
+                                <p class="subtitle mb-1">{{ experience.subtitle }}</p>
+                            </a>
                             <p class="period">{{ experience.period }}</p>
                             <p class="description" v-if="experience.description">{{ experience.description }}</p>
                         </div>
@@ -118,8 +123,10 @@ export default {
                     <ul class="d-flex justify-content-center gap-4 my-5 mx-4">
                         <li v-for="(language, index) in store.languages" :key="index"
                             class="d-flex flex-wrap flex-column align-items-center gap-2">
+                            <span class="text-center fw-bold">{{ language.name }}</span>
                             <img :src="getImage(`../assets/img/languages/${language.image}`)" :alt="language.name">
                             <span class="text-center">{{ language.level }}</span>
+
                         </li>
                     </ul>
                 </div>

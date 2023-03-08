@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <main class="container">
+    <main class="container-fluid px-5">
         <div class="row mt-5">
 
             <section id="contact-text" class="col-12 col-md-5 ms-border-right px-md-5">
