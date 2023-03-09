@@ -40,7 +40,10 @@ export default {
                     <ul class="d-flex justify-content-center gap-3">
                         <li v-for="(social, index) in this.store.socials" :key="index">
                             <a :href="social.link" target="_blank">
-                                <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
+                                <img :src="getImage(`https://scetto.netlify.app/assets/img/social/${social.image}`)"
+                                    :alt="social.name">
+                                <img :src="getImage(`https://scetto.netlify.app/src/assets/img/social/${social.image}`)"
+                                    :alt="social.name">
                             </a>
                         </li>
                     </ul>
