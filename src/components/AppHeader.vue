@@ -200,17 +200,18 @@ header {
     position: absolute;
     z-index: 99;
     top: var(--header-height);
-    right: 0;
-    background-color: var(--bgColor);
+    left: 0;
+    background-color: var(--bgColorDarker);
     padding: 1.2em 3em 2em;
-    width: 100%;
+    width: 70%;
 
     &>li {
         margin-top: .5em;
         color: var(--darkColor);
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.2rem;
         letter-spacing: 1px;
+        padding: .5em .3em;
     }
 
     #ms_nav-drop-work {
@@ -218,7 +219,7 @@ header {
             padding-top: .3em;
 
             li {
-                padding: 0em 1em;
+                padding: .4em 1em;
             }
         }
     }
