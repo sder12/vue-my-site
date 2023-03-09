@@ -27,7 +27,7 @@ export default {
                     <h1>Sara Cetto</h1>
                     <p>Here you can read my cv or downloading it, by clicking
                         the button belove:</p>
-                    <a href="#" onclick="window.open('../../public/Cetto_Sara.pdf','_blank'); return false;"
+                    <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
                         class="ms-btn ms-btn-black mt-2">
                         <i class="bi bi-file-earmark-arrow-down fs-5"></i>
                         Italian CV</a>
