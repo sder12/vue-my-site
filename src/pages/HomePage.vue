@@ -78,7 +78,7 @@ export default {
         <section id="jumbotron" class="ms-border-bottom">
             <div class="row py-5">
                 <!-- TITLE -->
-                <div id="title" class="col  col-lg-6">
+                <div id="title" class="col-12  col-lg-6">
                     <h1 class="ps-5">Hello!<br>
                         I am Sara <br>
                         <img src="../assets/img/&.svg" alt="and">
@@ -87,7 +87,7 @@ export default {
                     </h1>
                 </div>
                 <!-- PRESENTATION -->
-                <div class="col col-lg-6 d-flex flex-column justify-content-end align-items-start pe-5">
+                <div class="col-12 col-lg-6 d-flex flex-column justify-content-end align-items-start pe-5">
                     <p class="ps-5 ps-lg-0 pe-lg-4">
                         Welcome to my website portfolio! <br>
                         My name is Sara, and I am a <strong>Junior Full Stack Web Developer</strong> and
@@ -118,7 +118,7 @@ export default {
             <div class="row d-flex">
                 <!-- SELFIE PRESENTATION -->
                 <div class="col-12 col-lg-6 ">
-                    <div class="ms-bg py-4 px-5 me-2 d-flex flex-column">
+                    <div class="ms-bg py-4 px-5 d-flex flex-column">
                         <!-- selfie -->
                         <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50  align-self-end">
                         <!-- text -->
@@ -134,7 +134,7 @@ export default {
                     </div>
                 </div>
                 <!-- CARREER -->
-                <div id="career" class="col col-lg-6 d-flex flex-lg-column justify-content-center">
+                <div id="career" class="col-12 col-lg-6 d-flex flex-lg-column justify-content-center">
                     <div id="bg-star-dev" class="ms_jr-border">
                         <h3>Jr. Full Stack <br>
                             Web
