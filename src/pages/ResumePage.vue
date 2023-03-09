@@ -31,6 +31,7 @@ export default {
                         class="ms-btn ms-btn-black mt-2">
                         <i class="bi bi-file-earmark-arrow-down fs-5"></i>
                         Italian CV</a>
+                    <a href="../src/assets/Cetto_Sara.pdf" target="_blank">click</a>
                 </div>
                 <!-- CONTACT: selfie + social-->
                 <div id="contact" class="ms-bg text-center py-5">
@@ -40,10 +41,11 @@ export default {
                     <ul class="d-flex justify-content-center gap-3">
                         <li v-for="(social, index) in this.store.socials" :key="index">
                             <a :href="social.link" target="_blank">
-                                <img :src="getImage(`https://scetto.netlify.app/assets/img/social/${social.image}`)"
-                                    :alt="social.name">
-                                <img :src="getImage(`https://scetto.netlify.app/src/assets/img/social/${social.image}`)"
-                                    :alt="social.name">
+                                <img :src="getImage(`/src/assets/img/social/${social.image}`)" :alt="social.name">
+                                <img src="../../public/social/behance.svg" alt="">
+                                <img :src="`../../public/social/${social.image}`" alt="">
+                                <img :src="require(`../../public/social/${social.image}`)" alt="">
+                                <img :src="require(`../../public/social/behance.svg`)" alt="">
                             </a>
                         </li>
                     </ul>
