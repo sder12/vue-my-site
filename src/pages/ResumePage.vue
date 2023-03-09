@@ -42,6 +42,8 @@ export default {
                             <a :href="social.link" target="_blank">
                                 <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
                                 <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
+                                <img :src="getImage(`/assets/img/social/${social.image}`)" :alt="social.name">
+                                <img :src="`/assets/img/social/${social.image}`" :alt="social.name">
                             </a>
                         </li>
                     </ul>
