@@ -74,12 +74,13 @@ export default {
 <template>
     <main class="container-fluid px-5">
 
+
         <!-- JUMBOTRON -->
-        <section id="jumbotron" class="ms-border-bottom">
+        <section id="jumbotron" class="ms-border-bottom col-12">
             <div class="row py-5">
                 <!-- TITLE -->
                 <div id="title" class="col-12  col-lg-6">
-                    <h1 class="ps-5">Hello!<br>
+                    <h1 class="ps-3">Hello!<br>
                         I am Sara <br>
                         <img src="../assets/img/&.svg" alt="and">
                         this is my <br>
@@ -87,8 +88,8 @@ export default {
                     </h1>
                 </div>
                 <!-- PRESENTATION -->
-                <div class="col-12 col-lg-6 d-flex flex-column justify-content-end align-items-start pe-5">
-                    <p class="ps-5 ps-lg-0 pe-lg-4">
+                <div class="col-12 col-lg-6 d-flex flex-column justify-content-end align-items-start">
+                    <p class="ps-0 pe-0">
                         Welcome to my website portfolio! <br>
                         My name is Sara, and I am a <strong>Junior Full Stack Web Developer</strong> and
                         <strong> Graphic Designer</strong>
@@ -99,12 +100,13 @@ export default {
                         Thank you for visiting, and have a great day!
                     </p>
                     <!-- Btn cv -->
-                    <div class="ps-5 ps-lg-0">
+                    <div>
                         <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
                             class="ms-btn ms-btn-black mt-2">
                             <i class="bi bi-file-earmark-arrow-down fs-5"></i> Italian CV
                         </a>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -114,40 +116,46 @@ export default {
 
 
         <!-- PRESENTATION -->
-        <section id="presentation" class="ms-border-bottom">
+        <section id="presentation" class="ms-border-bottom col-12">
             <div class="row d-flex">
                 <!-- SELFIE PRESENTATION -->
-                <div class="col-12 col-lg-6 ">
-                    <div class="ms-bg py-4 px-5 d-flex flex-column">
-                        <!-- selfie -->
-                        <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50  align-self-end">
-                        <!-- text -->
-                        <p class="w-75 align-self-center">
-                            Hi there, my name is Sara and I live in Trento, Italy. I studied graphic design, but over the
-                            last
-                            few years, I've become passionate about the world of web development. I've learned various
-                            front-end
-                            and back-end languages and technologies, and I enjoy using them to create beautiful and
-                            functional
-                            websites.
-                        </p>
-                    </div>
+                <div class="col-12 col-lg-6 ms-bg py-3 px-3 d-flex flex-column">
+
+                    <!-- selfie -->
+                    <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50  align-self-end">
+                    <!-- text -->
+                    <p class="w-75 align-self-center">
+                        Hi there, my name is Sara and I live in Trento, Italy. I studied graphic design, but
+                        over
+                        the
+                        last
+                        few years, I've become passionate about the world of web development. I've learned
+                        various
+                        front-end
+                        and back-end languages and technologies, and I enjoy using them to create beautiful and
+                        functional
+                        websites.
+                    </p>
+
+
                 </div>
                 <!-- CARREER -->
-                <div id="career" class="col-12 col-lg-6 d-flex flex-lg-column justify-content-center">
-                    <div id="bg-star-dev" class="ms_jr-border">
-                        <h3>Jr. Full Stack <br>
-                            Web
-                            Developer</h3>
-                        <router-link :to="{ name: 'works-developer' }" class="ms-btn ms-btn-purple mt-3">VIEW
-                            PROJECTS</router-link>
-                    </div>
-                    <div id="bg-star-graphic">
-                        <h3>Graphic <br>
-                            Designer</h3>
+                <div id="career" class="col col-12 col-lg-6 d-flex flex-lg-column justify-content-center ">
+                    <div class="row">
+                        <div id="bg-star-dev" class="ms_jr-border">
+                            <h3>Jr. Full Stack <br>
+                                Web
+                                Developer</h3>
+                            <router-link :to="{ name: 'works-developer' }" class="ms-btn ms-btn-purple mt-3">VIEW
+                                PROJECTS</router-link>
+                        </div>
+                        <div id="bg-star-graphic">
+                            <h3>Graphic <br>
+                                Designer</h3>
 
-                        <router-link :to="{ name: 'works-graphic' }" class="ms-btn ms-btn-orange mt-3">VIEW
-                            PROJECTS</router-link>
+                            <router-link :to="{ name: 'works-graphic' }" class="ms-btn ms-btn-orange mt-3">VIEW
+                                PROJECTS</router-link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,7 +163,7 @@ export default {
         <!-- / PRESENTATION -->
 
         <!-- SLIDER -->
-        <section id="works" class="ms-border-bottom">
+        <section id="works" class="ms-border-bottom col-12">
             <div class="row">
                 <h3 class="text-center mb-4">Works</h3>
                 <!-- slider -->
@@ -209,6 +217,7 @@ export default {
             </div>
         </section>
         <!-- / SKILLS TECHNOLOGIES -->
+
     </main>
 </template>
 
@@ -320,5 +329,21 @@ section #career {
     }
 
 
+}
+
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size:
+            2.8rem !important;
+    }
+
+    #title {
+        background-position: .2em 8em;
+
+        img {
+            width: .9em;
+        }
+    }
 }
 </style>

@@ -179,4 +179,16 @@ body {
     .ms-border-left {
         border-left: 0px solid var(--darkColor);
     }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size:
+            2.8rem !important;
+    }
+
 }
