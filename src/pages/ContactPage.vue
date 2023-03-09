@@ -9,7 +9,7 @@ export default {
     },
     methods: {
         getImage(imgPath) {
-            return new URL(`../assets/img/social/${imgPath}`, import.meta.url).href;
+            return new URL(`/img/social/${imgPath}`, import.meta.url).href;
         }
     }
 }

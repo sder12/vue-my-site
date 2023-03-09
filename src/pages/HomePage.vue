@@ -10,27 +10,27 @@ export default {
             sliderWorks: [
                 {
                     title: 'Boolbnb',
-                    cover: '../assets/img/works/developer/boolbnb-cover.png',
+                    cover: '/img/works/developer/boolbnb-cover.png',
                 },
                 {
                     title: 'Spotify',
-                    cover: '../assets/img/works/developer/spotify-cover.png',
+                    cover: '/img/works/developer/spotify-cover.png',
                 },
                 {
                     title: 'Discord',
-                    cover: '../assets/img/works/developer/discord-cover.png',
+                    cover: '/img/works/developer/discord-cover.png',
                 },
                 {
                     title: 'Boolzap',
-                    cover: '../assets/img/works/developer/boolzapp-cover.png',
+                    cover: '/img/works/developer/boolzapp-cover.png',
                 },
                 {
                     title: 'Bakery',
-                    cover: '../assets/img/works/developer/bakery-cover.png',
+                    cover: '/img/works/developer/bakery-cover.png',
                 },
                 {
                     title: 'Dropbox',
-                    cover: '../assets/img/works/developer/dropbox-cover.png',
+                    cover: '/img/works/developer/dropbox-cover.png',
                 },
 
             ]
@@ -101,7 +101,7 @@ export default {
                     </p>
                     <!-- Btn cv -->
                     <div>
-                        <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
+                        <a href="#" onclick="window.open('/Cetto_Sara.pdf','_blank'); return false;"
                             class="ms-btn ms-btn-black mt-2">
                             <i class="bi bi-file-earmark-arrow-down fs-5"></i> Italian CV
                         </a>
@@ -200,7 +200,7 @@ export default {
                         <span class="fw-semibold">Web developer</span>
                         <ul class="d-flex flex-wrap pe-md-5 pt-3 gap-md-2">
                             <li v-for="(dev, index) in this.store.skillsDev" :key="index" class="col-4 col-md-2">
-                                <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
+                                <img :src="getImage(`/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
                             </li>
                         </ul>
                     </div>
@@ -208,8 +208,7 @@ export default {
                         <span class="fw-semibold">Graphic Designer</span>
                         <ul class="d-flex flex-wrap pe-md-5 gap-md-2">
                             <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index" class="col-4 col-md-2">
-                                <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
-                                    class="ms-skills">
+                                <img :src="getImage(`/img/skills/graphic/${graphic}.png`)" :alt="graphic" class="ms-skills">
                             </li>
                         </ul>
                     </div>

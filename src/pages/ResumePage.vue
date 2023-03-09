@@ -27,11 +27,10 @@ export default {
                     <h1>Sara Cetto</h1>
                     <p>Here you can read my cv or downloading it, by clicking
                         the button belove:</p>
-                    <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
+                    <a href="#" onclick="window.open('/Cetto_Sara.pdf','_blank'); return false;"
                         class="ms-btn ms-btn-black mt-2">
                         <i class="bi bi-file-earmark-arrow-down fs-5"></i>
                         Italian CV</a>
-                    <a href="../src/assets/Cetto_Sara.pdf" target="_blank">click</a>
                 </div>
                 <!-- CONTACT: selfie + social-->
                 <div id="contact" class="ms-bg text-center py-5">
@@ -53,7 +52,7 @@ export default {
                         <p class="fw-bold">Web developer</p>
                         <ul class="d-flex flex-wrap">
                             <li v-for="(dev, index) in this.store.skillsDev" :key="index">
-                                <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
+                                <img :src="getImage(`/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
                             </li>
                         </ul>
                     </div>
@@ -61,8 +60,7 @@ export default {
                         <p class="fw-bold">Graphic Designer</p>
                         <ul class="d-flex flex-wrap">
                             <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
-                                <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
-                                    class="ms-skills">
+                                <img :src="getImage(`/img/skills/graphic/${graphic}.png`)" :alt="graphic" class="ms-skills">
                             </li>
                         </ul>
                     </div>
@@ -79,7 +77,7 @@ export default {
                     <h3 class="ms-bg py-3 px-4">Education</h3>
                     <div class="row py-4 ps-5" v-for="(education, index) in store.educations" :key="index">
                         <div class="col-1 d-none d-md-block">
-                            <img :src="getImage(`../assets/img/education/${education.image}`)" :alt="education.title">
+                            <img :src="getImage(`/img/education/${education.image}`)" :alt="education.title">
                         </div>
                         <div class="col-10">
                             <a :href="education.link" target="blank">
@@ -98,7 +96,7 @@ export default {
                     <h3 class="ms-bg py-3 px-4">Experience</h3>
                     <div class="row py-4 ps-5" v-for="(experience, index) in store.experiences" :key="index">
                         <div class="col-1 d-none d-md-block">
-                            <img v-if="experience.image" :src="getImage(`../assets/img/education/${experience.image}`)"
+                            <img v-if="experience.image" :src="getImage(`/img/education/${experience.image}`)"
                                 :alt="experience.title">
                         </div>
                         <div class="col-10">
@@ -119,7 +117,7 @@ export default {
                         <li v-for="(language, index) in store.languages" :key="index"
                             class="d-flex flex-wrap flex-column align-items-center gap-2">
                             <span class="text-center fw-bold">{{ language.name }}</span>
-                            <img :src="getImage(`../assets/img/languages/${language.image}`)" :alt="language.name">
+                            <img :src="getImage(`/img/languages/${language.image}`)" :alt="language.name">
                             <span class="text-center">{{ language.level }}</span>
                         </li>
                     </ul>

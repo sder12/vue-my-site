@@ -187,7 +187,7 @@ export default {
                 <div class="col-12 col-sm-10 col-md-6 col-lg-6 pb-3 align-self-center">
                     <ul class="d-flex flex-wrap w-100 ">
                         <li v-for="(dev, index) in this.store.skillsDev" :key="index">
-                            <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
+                            <img :src="getImage(`/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
                         </li>
                     </ul>
                 </div>
@@ -205,7 +205,7 @@ export default {
                 class="dev-works d-flex align-items-center justify-content-center position-relative">
 
                 <!-- Visible Img -->
-                <img class=" cover_img" :src="getImage(`../assets/img/works/developer/${work.cover}`)" :alt="work.title">
+                <img class=" cover_img" :src="getImage(`/img/works/developer/${work.cover}`)" :alt="work.title">
 
                 <!-- HOVER-->
                 <div class="hover_img d-flex flex-column justify-content-center align-items-center">
