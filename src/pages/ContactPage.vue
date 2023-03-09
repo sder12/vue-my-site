@@ -20,7 +20,7 @@ export default {
         <div class="row mt-5">
 
             <!-- CONTACT -->
-            <section id="contact-text" class="col-12 col-md-5 ms-border-right px-md-5">
+            <section id="contact-text" class="col-12 col-lg-5 ms-border-right px-md-5">
                 <!-- TITLE -->
                 <h1>Contact <br> Me</h1>
                 <div class="my-5">
@@ -46,7 +46,7 @@ export default {
             <!-- /CONTACT-->
 
             <!-- FORM  -->
-            <section id="contact-form" class="col-12 col-md-7">
+            <section id="contact-form" class="col-12 col-lg-7">
                 <form name="contact" method="POST" data-netlify="true">
                     <!-- TO -->
                     <div class="mb-3 row">

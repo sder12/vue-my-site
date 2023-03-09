@@ -1,7 +1,9 @@
 <script>
 import { store } from '../store';
+import ChevronToTop from "../components/ChevronToTop.vue";
 export default {
     name: 'HomePage',
+    components: { ChevronToTop },
     data() {
         return {
             store,
@@ -65,15 +67,14 @@ export default {
                 this.currentSliderRight = 0;
             }
         }
-
     },
 
 }
 </script>
 
 <template>
-    <main class="container-fluid px-md-4 px-lg-5">
-
+    <!-- <ChevronToTop /> -->
+    <main class="container-fluid px-md-4 px-lg-5 #top">
 
         <!-- JUMBOTRON -->
         <section id="jumbotron" class="ms-border-bottom col-12">
@@ -126,18 +127,10 @@ export default {
                     <!-- text -->
                     <p class="w-75 align-self-center">
                         Hi there, my name is Sara and I live in Trento, Italy. I studied graphic design, but
-                        over
-                        the
-                        last
-                        few years, I've become passionate about the world of web development. I've learned
-                        various
-                        front-end
-                        and back-end languages and technologies, and I enjoy using them to create beautiful and
-                        functional
-                        websites.
+                        over the last few years, I developed an interest in the world of web development.
+                        I've learned various front-end and back-end languages and technologies, and I enjoy using them to
+                        create beautiful and functional websites.
                     </p>
-
-
                 </div>
                 <!-- CARREER -->
                 <div id="career" class="col col-12 col-lg-6 d-flex flex-lg-column justify-content-center ">
@@ -190,30 +183,31 @@ export default {
         <!-- /SLIDER -->
 
         <!-- SKILLS TECHNOLOGIES -->
-        <section id="skills">
-            <div class="row ms-bg">
-                <div class="col-12 col-md-5">
-                    <h3>Skills</h3>
+        <section id="skills" class="ms-bg mt-3">
+            <div class="text-center ">
+                <h3>Skills</h3>
+            </div>
+            <div class="row my-5">
+                <div class="col-12 col-md-6 d-flex flex-column  ms-border-right ">
+                    <span class="fw-semibold text-center  w-50 ms_skills-border align-self-center mb-3">Web developer</span>
+                    <ul class="d-flex flex-wrap ">
+                        <li v-for="(dev, index) in this.store.skillsDev" :key="index" class="col-4 col-sm-2 text-center">
+                            <img :src="getImage(`/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-12 col-md-7">
-                    <div class="mb-5 ms-border-bottom">
-                        <span class="fw-semibold">Web developer</span>
-                        <ul class="d-flex flex-wrap pe-md-5 pt-3 gap-md-2">
-                            <li v-for="(dev, index) in this.store.skillsDev" :key="index" class="col-4 col-md-2">
-                                <img :src="getImage(`/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <span class="fw-semibold">Graphic Designer</span>
-                        <ul class="d-flex flex-wrap pe-md-5 gap-md-2">
-                            <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index" class="col-4 col-md-2">
-                                <img :src="getImage(`/img/skills/graphic/${graphic}.png`)" :alt="graphic" class="ms-skills">
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-start">
+                    <span class="fw-semibold text-center w-50 ms_skills-border align-self-center mb-3">Graphic
+                        Designer</span>
+                    <ul class="d-flex flex-wrap ">
+                        <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index"
+                            class="col-4  col-sm-2 text-center">
+                            <img :src="getImage(`/img/skills/graphic/${graphic}.png`)" :alt="graphic" class="ms-skills">
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </section>
         <!-- / SKILLS TECHNOLOGIES -->
 
@@ -260,24 +254,16 @@ section #career {
     }
 }
 
-.ms_jr-border {
+.ms_jr-border,
+.ms_skills-border {
     border-bottom: 1px solid var(--darkColor);
 }
 
 // SKILLS
-#skills .row {
-    padding: 3em 2em;
-
-    &>div:first-child {
-        background-image: url('../assets/img/stars/star-accent.svg');
-        background-repeat: no-repeat;
-        background-size: 4em;
-
-        h3 {
-            padding: .5em 0;
-        }
-    }
+#skills {
+    padding: 2em 0;
 }
+
 
 // SLIDER
 #slider-images {
@@ -310,9 +296,7 @@ section #career {
 
 //MEDIA QUERY
 @media screen and (max-width: 992px) {
-    .ms_jr-border {
-        border-bottom: 0px solid var(--darkColor);
-    }
+
 
     #slider-images .second-slider-img {
         display: none;
@@ -343,6 +327,18 @@ section #career {
         img {
             width: .9em;
         }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .ms_jr-border {
+        border-bottom: 0px solid var(--darkColor);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ms_skills-border {
+        border-bottom: 0px solid var(--darkColor);
     }
 }
 </style>
