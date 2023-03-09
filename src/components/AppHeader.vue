@@ -203,7 +203,7 @@ header {
     left: 0;
     background-color: var(--bgColorDarker);
     padding: 1.2em 3em 2em;
-    width: 70%;
+    width: 90%;
 
     &>li {
         margin-top: .5em;
@@ -220,6 +220,7 @@ header {
 
             li {
                 padding: .4em 1em;
+                font-size: 1rem;
             }
         }
     }
