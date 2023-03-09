@@ -44,8 +44,7 @@ export default {
                                 <img :src="getImage(`/src/assets/img/social/${social.image}`)" :alt="social.name">
                                 <img src="../../public/social/behance.svg" alt="">
                                 <img :src="`../../public/social/${social.image}`" alt="">
-                                <img :src="require(`../../public/social/${social.image}`)" alt="">
-                                <img :src="require(`../../public/social/behance.svg`)" alt="">
+
                             </a>
                         </li>
                     </ul>
