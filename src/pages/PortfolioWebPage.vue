@@ -170,10 +170,11 @@ export default {
 
 <template>
     <main class="container-fluid">
-        <!-- Introduction -->
+        <!-- INTRODUCTION -->
         <section class="container">
             <div class="row pt-5 pb-3">
-                <div class="col-6 py-5 bg-star">
+                <!-- Text -->
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 py-5 bg-star">
                     <h2 class="ms-border-bottom w-50 pb-3">Works</h2>
                     <h3>Jr. Full Stack <br>
                         Web Developer</h3>
@@ -181,7 +182,8 @@ export default {
                         I approach each project with creativity,
                         attention <br> to detail, and a dedication to delivering high-quality results. </p>
                 </div>
-                <div class="col-6 py-5">
+                <!-- Tech -->
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 py-5">
                     <ul class="d-flex flex-wrap w-75">
                         <li v-for="(dev, index) in this.store.skillsDev" :key="index">
                             <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
@@ -190,15 +192,15 @@ export default {
                 </div>
             </div>
         </section>
+        <!-- / INTRODUCTION -->
 
 
 
-        <!-- Works -->
+        <!-- WORKS -->
         <section class="row">
-
-            <!-- STATIC -->
+            <!-- SINGLE WORK  -->
             <div v-for="(work, index) in developerWorks" :key="index"
-                :class="`ms-bg-${work.bgcolor} col-12 col-md-${work.col}`"
+                :class="`ms-bg-${work.bgcolor} col-12 col-lg-${work.col}`"
                 class="dev-works d-flex align-items-center justify-content-center position-relative">
 
                 <!-- Visible Img -->
@@ -219,15 +221,15 @@ export default {
                     </div>
                 </div>
                 <!-- / HOVER-->
-
             </div>
-            <!-- / STATIC -->
-
+            <!-- / SINGLE WORK -->
         </section>
+        <!-- / WORKS -->
     </main>
 </template>
 
 <style lang="scss" scoped>
+// INTRODUCTION text
 .bg-star {
     background-image: url('../assets/img/stars/star-primary.svg');
     background-repeat: no-repeat;
@@ -243,7 +245,7 @@ export default {
     word-spacing: 1rem;
 }
 
-
+// WORKS
 .dev-works {
     padding: 2rem 10rem;
     cursor: pointer;

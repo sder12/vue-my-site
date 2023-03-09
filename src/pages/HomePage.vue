@@ -8,7 +8,6 @@ export default {
             currentSliderLeft: 0,
             currentSliderRight: 1,
             sliderWorks: [
-                //BAkery dc-comics Boolfix dropbox
                 {
                     title: 'Boolbnb',
                     cover: '../assets/img/works/developer/boolbnb-cover.png',
@@ -60,8 +59,6 @@ export default {
             } else {
                 this.currentSliderLeft = 0;
             }
-
-
             if (this.currentSliderRight < this.sliderWorks.length - 1) {
                 this.currentSliderRight++;
             } else {
@@ -72,16 +69,16 @@ export default {
     },
 
 }
-
 </script>
 
 <template>
     <main class="container-fluid px-5">
 
-        <section id="jumbotron" class="ms-border-bottom ">
+        <!-- JUMBOTRON -->
+        <section id="jumbotron" class="ms-border-bottom">
             <div class="row py-5">
                 <!-- TITLE -->
-                <div id="title" class="col col-lg-6">
+                <div id="title" class="col  col-lg-6">
                     <h1 class="ps-5">Hello!<br>
                         I am Sara <br>
                         <img src="../assets/img/&.svg" alt="and">
@@ -89,10 +86,8 @@ export default {
                         website!
                     </h1>
                 </div>
-
                 <!-- PRESENTATION -->
                 <div class="col col-lg-6 d-flex flex-column justify-content-end align-items-start pe-5">
-
                     <p class="ps-5 ps-lg-0 pe-lg-4">
                         Welcome to my website portfolio! <br>
                         My name is Sara, and I am a <strong>Junior Full Stack Web Developer</strong> and
@@ -103,26 +98,31 @@ export default {
                         and my personal resume. <br>
                         Thank you for visiting, and have a great day!
                     </p>
-                <div class="ps-5 ps-lg-0">
-                    <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
-                        class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
+                    <!-- Btn cv -->
+                    <div class="ps-5 ps-lg-0">
+                        <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
+                            class="ms-btn ms-btn-black mt-2">
+                            <i class="bi bi-file-earmark-arrow-down fs-5"></i> Italian CV
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- /JUMBOTRON -->
 
+
+
+
+        <!-- PRESENTATION -->
         <section id="presentation" class="ms-border-bottom">
             <div class="row d-flex">
-                <!-- SELFIE + TEXT -->
+                <!-- SELFIE PRESENTATION -->
                 <div class="col-12 col-lg-6 ">
                     <div class="ms-bg py-4 px-5 me-2 d-flex flex-column">
+                        <!-- selfie -->
                         <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50  align-self-end">
+                        <!-- text -->
                         <p class="w-75 align-self-center">
-                            <!-- On this website, you will find examples of my work in both web development and graphic
-                                design, including websites, logos, print materials, and more. <br>
-                                I approach each project with creativity,
-                                attention to detail, and a dedication to delivering high-quality results. -->
-
                             Hi there, my name is Sara and I live in Trento, Italy. I studied graphic design, but over the
                             last
                             few years, I've become passionate about the world of web development. I've learned various
@@ -139,7 +139,6 @@ export default {
                         <h3>Jr. Full Stack <br>
                             Web
                             Developer</h3>
-
                         <router-link :to="{ name: 'works-developer' }" class="ms-btn ms-btn-purple mt-3">VIEW
                             PROJECTS</router-link>
                     </div>
@@ -153,12 +152,13 @@ export default {
                 </div>
             </div>
         </section>
+        <!-- / PRESENTATION -->
 
         <!-- SLIDER -->
         <section id="works" class="ms-border-bottom">
             <div class="row">
                 <h3 class="text-center mb-4">Works</h3>
-
+                <!-- slider -->
                 <div class="col-12 d-flex justify-content-center">
                     <div class="slider position-relative d-flex justify-content-center ">
                         <div id="slider-images" class="d-flex justify-content-center align-items-center gap-3">
@@ -174,24 +174,14 @@ export default {
                             <a class="fs-1" @click="nextSlide">
                                 <i class=" bi bi-arrow-right-circle"></i>
                             </a>
-
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="col-12 d-flex justify-content-center align-items-center">
-                                                                                                        <p class="w-75 text-center">
-                                                                                                            On this website, you will find examples of my work in both web development and graphic
-                                                                                                            design, including websites, logos, print materials, and more.
-                                                                                                            I approach each project with creativity,
-                                                                                                            attention to detail, and a dedication to delivering high-quality results.
-                                                                                                        </p>
-                                                                                                    </div> -->
             </div>
         </section>
         <!-- /SLIDER -->
 
-
+        <!-- SKILLS TECHNOLOGIES -->
         <section id="skills">
             <div class="row ms-bg">
                 <div class="col-12 col-md-5">
@@ -218,6 +208,7 @@ export default {
                 </div>
             </div>
         </section>
+        <!-- / SKILLS TECHNOLOGIES -->
     </main>
 </template>
 
@@ -226,7 +217,7 @@ section {
     padding: 2rem 2rem;
 }
 
-//TITLE
+//JUMBOTRON - TITLE
 #title {
     background-image: url('../assets/img/stars/star-accent.svg');
     background-repeat: no-repeat;
@@ -238,14 +229,11 @@ section {
     }
 }
 
-//PRESENTATION
-#presentation {
-    #career div {
-        padding: 3rem 2rem;
-    }
+// CAREER
+#career div {
+    padding: 3rem 2rem;
 }
 
-// CAREER
 section #career {
     #bg-star-dev {
         background-image: url('../assets/img/stars/star-primary.svg');
@@ -286,7 +274,6 @@ section #career {
 // SLIDER
 #slider-images {
     width: 90%;
-    // background-color: blue;
 
     img {
         width: calc(90% / 2);
@@ -298,7 +285,6 @@ section #career {
     display: block;
 }
 
-//slider-controller
 #slider-controls {
     width: 100%;
     position: absolute;
@@ -326,7 +312,13 @@ section #career {
 
     #slider-images {
         width: 100%;
+
+        img {
+            width: 80%;
+            height: auto;
+        }
     }
+
 
 }
 </style>

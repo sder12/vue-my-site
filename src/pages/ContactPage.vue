@@ -19,6 +19,7 @@ export default {
     <main class="container-fluid px-5">
         <div class="row mt-5">
 
+            <!-- CONTACT -->
             <section id="contact-text" class="col-12 col-md-5 ms-border-right px-md-5">
                 <!-- TITLE -->
                 <h1>Contact <br> Me</h1>
@@ -41,8 +42,9 @@ export default {
                     </ul>
                 </div>
             </section>
+            <!-- /CONTACT-->
 
-            <!-- FORM send email -->
+            <!-- FORM  -->
             <section id="contact-form" class="col-12 col-md-7">
                 <form @submit.prevent="submitForm">
                     <!-- TO -->
@@ -75,6 +77,7 @@ export default {
                     </div>
                 </form>
             </section>
+            <!-- / FORM  -->
 
         </div>
     </main>
@@ -89,6 +92,7 @@ section {
     }
 }
 
+//CONTACT
 #contact-text {
     background-image: url('../assets/img/stars/star-accent.svg');
     background-repeat: no-repeat;
@@ -110,6 +114,7 @@ section {
     }
 }
 
+//FORM
 #contact-form {
     padding-left: 3rem;
     padding-right: 3rem;

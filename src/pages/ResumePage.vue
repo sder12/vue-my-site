@@ -22,28 +22,32 @@ export default {
 
             <!-- LEFT -->
             <section class="col-12 col-md-4 my-5 ms-border-right">
-                <!-- TITLE -->
+                <!-- TITLE: name + cv -->
                 <div id="title">
                     <h1>Sara Cetto</h1>
                     <p>Here you can read my cv or downloading it, by clicking
                         the button belove:</p>
                     <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
-                        class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
+                        class="ms-btn ms-btn-black mt-2">
+                        <i class="bi bi-file-earmark-arrow-down fs-5"></i>
+                        Italian CV</a>
                 </div>
-                <!-- CONTACT-->
+                <!-- CONTACT: selfie + social-->
                 <div id="contact" class="ms-bg text-center py-5">
+                    <!-- selfie -->
                     <img src="../assets/img/sara-foto.png" alt="sara-foto" class="w-50">
                     <p class="my-3">Currently based in Trento, Italy.</p>
                     <ul class="d-flex justify-content-center gap-3">
                         <li v-for="(social, index) in this.store.socials" :key="index">
                             <a :href="social.link" target="_blank">
-                                <img :src="getImage(`../assets/img/social/${social.image}`)" :alt="social.name">
+                                <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
+                                <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
                             </a>
                         </li>
                     </ul>
                     <span> sara.cetto@gmail.com</span>
                 </div>
-                <!-- SKILLS -->
+                <!-- SKILLS technologies -->
                 <div id="skills">
                     <div class="mb-5">
                         <p class="fw-bold">Web developer</p>
@@ -64,9 +68,12 @@ export default {
                     </div>
                 </div>
             </section>
+            <!-- /LEFT -->
+
 
             <!-- RIGHT -->
             <section class="col-12 col-md-8 my-5">
+
                 <!-- EDUCATION -->
                 <div id="education" class="mt-4">
                     <h3 class="ms-bg py-3 px-4">Education</h3>
@@ -84,8 +91,8 @@ export default {
                             <p class="description">{{ education.description }}</p>
                         </div>
                     </div>
-
                 </div>
+
                 <!-- EXPERIENCE -->
                 <div id="experience" class="mt-4">
                     <h3 class="ms-bg py-3 px-4">Experience</h3>
@@ -114,17 +121,19 @@ export default {
                             <span class="text-center fw-bold">{{ language.name }}</span>
                             <img :src="getImage(`../assets/img/languages/${language.image}`)" :alt="language.name">
                             <span class="text-center">{{ language.level }}</span>
-
                         </li>
                     </ul>
                 </div>
             </section>
         </div>
+        <!-- / RIGHT -->
+
 
     </main>
 </template>
 
 <style lang="scss" scoped>
+// NAME title
 #title {
     padding: 2rem 5rem;
     background-image: url('../assets/img/stars/star-accent.svg');
@@ -137,19 +146,21 @@ export default {
     }
 }
 
+//Contact - social
 #contact li img {
     width: 2em;
 }
 
+//Skills - technologies
 #skills {
     padding: 2em 4em;
 }
 
+//EDUCATION
 #education {
     img {
         width: 4em;
     }
-
 
     .title {
         color: var(--secondaryColor);
@@ -169,6 +180,7 @@ export default {
     }
 }
 
+// EXPERIENCE
 #experience {
     .title {
         color: var(--primaryColor);

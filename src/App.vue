@@ -1,4 +1,5 @@
 <script>
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue"
 

@@ -1,5 +1,4 @@
 <script>
-import 'bootstrap-icons/font/bootstrap-icons.css'
 
 export default {
     name: 'AppHeader',
@@ -47,99 +46,107 @@ export default {
         <!-- LG NAVBAR -->
         <div id="ms_nav" class="d-none d-sm-block">
             <ul class="d-flex align-items-center">
+                <!-- home -->
                 <li>
                     <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorkslg"
-                        active-class="active-link">HOME</router-link>
-                    <!-- :class="currentRoute.name == 'home': 'fw-bold' : ''" -->
+                        active-class="active-link">
+                        HOME
+                    </router-link>
                 </li>
+                <!-- works -->
                 <li class="position-relative">
                     <div v-on:click="lgWorkClick" :class="visibleWorklgActive ? 'active-link' : ''">
                         <a class="d-flex align-items-center jsutify-content-center" href="#">
-                            WORKS
-                            <!-- CHEVRON -->
-                            <i class="bi bi-chevron-down d-none d-md-block"></i>
-
+                            WORKS <i class="bi bi-chevron-down d-none d-md-block"></i>
                         </a>
                     </div>
+                    <!-- works dropmenu -->
                     <div id="ms_nav-drop-lg" class="d-flex flex-column gap-2 mt-1 py-3 px-2"
                         :class="visibleWorklg ? 'd-block' : 'd-none'">
                         <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorkslg"
-                            active-class="active-work-link">WEB
-                            DEVELOPER</router-link>
+                            active-class="active-work-link">WEB DEVELOPER</router-link>
                         <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorkslg"
-                            active-class="active-work-link">GRAPHIC
-                            DESIGNER</router-link>
+                            active-class="active-work-link">GRAPHIC DESIGNER</router-link>
                     </div>
                 </li>
-
-
-
+                <!-- about -->
                 <li>
                     <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorkslg"
                         active-class="active-link">ABOUT</router-link>
                 </li>
+                <!-- contact -->
                 <li>
                     <router-link :to="{ name: 'contact' }" class="nav-link" v-on:click="closeDropWorkslg"
                         active-class="active-link">CONTACT</router-link>
                 </li>
-
-
             </ul>
         </div>
+        <!-- / LG NAVBAR -->
 
+
+        <!-- SM NAVABAR -->
         <div class="d-block d-sm-none">
-
+            <!-- hamburger or close icon -->
             <h2 v-on:click="clickHamburger" v-if="hamburgerNavVisible == false" class="btn-nav-sm">
                 <i class="bi bi-x-lg"></i>
             </h2>
             <h2 v-on:click="clickHamburger" v-else class="btn-nav-sm">
                 <i class="bi bi-list"></i>
             </h2>
-
-
-
-
+            <!-- navbar -->
             <ul id="ms_nav-drop" :class="hamburgerNavVisible ? 'd-none' : 'd-block'">
+                <!-- home -->
                 <li>
                     <router-link :to="{ name: 'home' }" class="nav-link" v-on:click="closeDropWorksSm"
                         active-class="active-md-link">HOME</router-link>
                 </li>
+                <!-- works -->
                 <li id="ms_nav-drop-work">
                     <span v-on:click="smWorkClick">
-                        WORKS
-                        <!-- CHEVRON -->
-                        <i class="bi bi-chevron-down"></i>
+                        WORKS <i class="bi bi-chevron-down"></i>
                     </span>
+                    <!-- works dropmenu -->
                     <ul :class="visibleWorksm ? 'd-block' : 'd-none'">
                         <li>
                             <router-link :to="{ name: 'works-developer' }" v-on:click="closeDropWorksSm"
-                                active-class="active-md-link">•
-                                Web Developer</router-link>
+                                active-class="active-md-link">• Web Developer</router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'works-graphic' }" v-on:click="closeDropWorksSm"
-                                active-class="active-md-link">• Graphic
-                                Designer</router-link>
+                                active-class="active-md-link">• Graphic Designer</router-link>
                         </li>
                     </ul>
                 </li>
+                <!-- about -->
                 <li>
                     <router-link :to="{ name: 'about' }" class="nav-link" v-on:click="closeDropWorksSm"
                         active-class="active-md-link">ABOUT</router-link>
                 </li>
+                <!-- contact -->
                 <li>
                     <router-link :to="{ name: 'contact' }" class="nav-link" v-on:click="closeDropWorksSm"
                         active-class="active-md-link">CONTACT</router-link>
                 </li>
             </ul>
         </div>
-
-
-
+        <!-- / SM NAVABAR -->
     </header>
 </template>
 
+
+
 <style lang="scss">
+header {
+    border-bottom: 2px solid var(--darkColor);
+    height: var(--header-height);
+}
+
+//LOGO
+#ms_logo img {
+    height: calc(var(--header-height) - 10px);
+}
+
+// ACTIVE LINK
 .active-link {
     border-top: 1px solid black;
 }
@@ -149,17 +156,6 @@ export default {
     background-color: white;
 }
 
-
-header {
-    border-bottom: 2px solid var(--darkColor);
-    height: var(--header-height);
-    // background-color: pink;
-}
-
-//LOGO
-#ms_logo img {
-    height: calc(var(--header-height) - 10px);
-}
 
 // NAVBAR
 #ms_nav {
@@ -183,6 +179,14 @@ header {
     }
 }
 
+//HAMBURGER ICONS
+.btn-nav-sm {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-top: .5rem;
+}
+
+// NAVBAR - drops
 #ms_nav-drop-lg {
     position: absolute;
     z-index: 99;
@@ -190,8 +194,6 @@ header {
     left: 0em;
     background-color: var(--bgColor);
     width: 300%;
-
-
 }
 
 #ms_nav-drop {
@@ -220,11 +222,5 @@ header {
             }
         }
     }
-}
-
-.btn-nav-sm {
-    font-size: 3rem;
-    line-height: 3rem;
-    margin-top: .5rem;
 }
 </style>
