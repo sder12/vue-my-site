@@ -32,7 +32,7 @@ export default {
                 </div>
                 <!-- CONTACT-->
                 <div id="contact" class="ms-bg text-center py-5">
-                    <img src="../assets/img/sara-foto.png" alt="sara-foto">
+                    <img src="../assets/img/sara-foto.png" alt="sara-foto" class="w-50">
                     <p class="my-3">Currently based in Trento, Italy.</p>
                     <ul class="d-flex justify-content-center gap-3">
                         <li v-for="(social, index) in this.store.socials" :key="index">
@@ -52,33 +52,21 @@ export default {
                                 <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
                             </li>
                         </ul>
-                </div>
-                <div>
-                    <p class="fw-bold">Graphic Designer</p>
-                    <ul class="d-flex flex-wrap">
-                        <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
-                            <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
-                                class="ms-skills">
-                        </li>
-                    </ul>
+                    </div>
+                    <div>
+                        <p class="fw-bold">Graphic Designer</p>
+                        <ul class="d-flex flex-wrap">
+                            <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
+                                <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
+                                    class="ms-skills">
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
             <!-- RIGHT -->
             <section class="col-12 col-md-8 my-5">
-                <!-- PRESENTATION -->
-                <!-- <div id="presentation" class="d-flex justify-content-end pe-5">
-                                                                                                                                                                                            <p class="col col-6 d-none d-md-block">
-                                                                                                                                                                                                Durante il mio percorso di studi
-                                                                                                                                                                                                di grafica sono entrata pù volte
-                                                                                                                                                                                                in contatto con il mondo della programmazione. Sono rimasta affascinata dalle sue potenzialità,
-                                                                                                                                                                                                in particolare quando applicate alla programmazione web.
-                                                                                                                                                                                                Per questo ho deciso di ampliare
-                                                                                                                                                                                                le mie conoscenze mettendomi
-                                                                                                                                                                                                in gioco in questo settore.</p>
-                                                                                                                                                                                        </div> -->
-
                 <!-- EDUCATION -->
                 <div id="education" class="mt-4">
                     <h3 class="ms-bg py-3 px-4">Education</h3>

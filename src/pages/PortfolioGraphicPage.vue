@@ -10,21 +10,24 @@ export default {
                     title: "Fontsie",
                     cover: "fontsie-cover.png",
                     bgcolor: "purple",
-                    col: 6,
-                    tech: 'HTML CSS JS AI',
+                    col: 7,
+                    tech: 'HTML  CSS  JS  ILLUSTRATOR',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                     git: "https://fontsie.net/",
                     btnText: "fontsie.net"
                 },
                 {
-                    title: "Boolzapp",
-                    cover: "boolzapp-cover.png",
+                    title: "Seasar",
+                    cover: "seasar-cover.png",
                     bgcolor: "yellow",
-                    col: 6,
-                    tech: 'HTML CSS JS',
+                    col: 5,
+                    tech: 'ILLUSTRATOR  FONTLAB',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    git: "https://github.com/sder12/vue-boolzapp",
+                    git: "https://www.behance.net/gallery/133868807/SEASAR-typeface",
+                    btnText: "behance"
                 },
+
+
             ]
         }
     },
@@ -73,7 +76,7 @@ export default {
 
                     <p class="w-75 text-center">{{ work.description }}</p>
 
-                    <p class="fw-bold">{{ work.tech }}</p>
+                    <p id="tech" class="fw-bold">{{ work.tech }}</p>
 
 
 
@@ -87,7 +90,18 @@ export default {
             </div>
             <!-- / STATIC -->
         </section>
-        <h2 class="text-center my-5"> <i class="bi bi-cone"></i> Work in progress...</h2>
+        <div class="d-flex justify-content-center align-items-center gap-4">
+            <h2 class="text-center my-5"> <i class="bi bi-cone"></i> Work in progress</h2>
+
+            <div>
+                <div class="snippet" data-title="dot-flashing">
+                    <div class="stage">
+                        <div class="dot-flashing"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 </template>
 
@@ -108,7 +122,9 @@ i {
     }
 }
 
-
+#tech {
+    word-spacing: 1rem;
+}
 
 .dev-works {
     padding: 2rem 10rem;
@@ -128,6 +144,62 @@ i {
         left: 0;
         width: 100%;
         height: 100%;
+    }
+}
+
+
+
+//DOT FLASHING
+.dot-flashing {
+    position: relative;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--darkColor);
+    color: var(--darkColor);
+    animation: dot-flashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--darkColor);
+    color: var(--darkColor);
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--darkColor);
+    color: var(--darkColor);
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes dot-flashing {
+    0% {
+        background-color: var(--darkColor);
+    }
+
+    50%,
+    100% {
+        background-color: rgba(100, 100, 100, 0.2);
     }
 }
 </style>

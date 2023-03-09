@@ -210,7 +210,7 @@ export default {
 
                     <p class="w-75 text-center">{{ work.description }}</p>
 
-                    <p class="fw-bold">{{ work.tech }}</p>
+                    <p id="tech" class="fw-bold">{{ work.tech }}</p>
 
                     <p v-show="work.more" class="fw-bold">{{ work.more }}</p>
                     <div class="d-flex gap-3">
@@ -237,6 +237,10 @@ export default {
     img {
         width: .9em;
     }
+}
+
+#tech {
+    word-spacing: 1rem;
 }
 
 

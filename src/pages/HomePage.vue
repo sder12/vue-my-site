@@ -94,34 +94,43 @@ export default {
                 <div class="col col-lg-6 d-flex flex-column justify-content-end align-items-start pe-5">
 
                     <p class="ps-5 ps-lg-0 pe-lg-4">
-                    Welcome to my website portfolio! <br>
-                    My name is Sara, and I am a <strong>Junior Full Stack Web Developer</strong> and
-                    <strong> Graphic Designer</strong>
-                    with a passion
-                    for creating beautiful and functional websites. <br>
-                    On this site, you will be able to see my works
-                    and my personal resume. <br>
+                        Welcome to my website portfolio! <br>
+                        My name is Sara, and I am a <strong>Junior Full Stack Web Developer</strong> and
+                        <strong> Graphic Designer</strong>
+                        with a passion
+                        for creating beautiful and functional websites. <br>
+                        On this site, you will be able to see my works
+                        and my personal resume. <br>
                         Thank you for visiting, and have a great day!
                     </p>
-                    <div class="ps-5 ps-lg-0">
-                        <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
-                            class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
-                    </div>
+                <div class="ps-5 ps-lg-0">
+                    <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
+                        class="ms-btn ms-btn-black mt-2"> DOWNLOAD CV</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <section id="presentation" class="ms-border-bottom">
             <div class="row d-flex">
                 <!-- SELFIE + TEXT -->
                 <div class="col-12 col-lg-6 ">
                     <div class="ms-bg py-4 px-5 me-2 d-flex flex-column">
-                        <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50 align-self-end">
+                        <img src="../assets/img/sara-foto.png" alt="sara-foto" class="my-5 w-50  align-self-end">
                         <p class="w-75 align-self-center">
-                            On this website, you will find examples of my work in both web development and graphic
-                            design, including websites, logos, print materials, and more. <br>
-                            I approach each project with creativity,
-                            attention to detail, and a dedication to delivering high-quality results.</p>
+                            <!-- On this website, you will find examples of my work in both web development and graphic
+                                design, including websites, logos, print materials, and more. <br>
+                                I approach each project with creativity,
+                                attention to detail, and a dedication to delivering high-quality results. -->
+
+                            Hi there, my name is Sara and I live in Trento, Italy. I studied graphic design, but over the
+                            last
+                            few years, I've become passionate about the world of web development. I've learned various
+                            front-end
+                            and back-end languages and technologies, and I enjoy using them to create beautiful and
+                            functional
+                            websites.
+                        </p>
                     </div>
                 </div>
                 <!-- CARREER -->
@@ -171,13 +180,13 @@ export default {
                 </div>
 
                 <!-- <div class="col-12 d-flex justify-content-center align-items-center">
-                                                                        <p class="w-75 text-center">
-                                                                            On this website, you will find examples of my work in both web development and graphic
-                                                                            design, including websites, logos, print materials, and more.
-                                                                            I approach each project with creativity,
-                                                                            attention to detail, and a dedication to delivering high-quality results.
-                                                                        </p>
-                                                                    </div> -->
+                                                                                                        <p class="w-75 text-center">
+                                                                                                            On this website, you will find examples of my work in both web development and graphic
+                                                                                                            design, including websites, logos, print materials, and more.
+                                                                                                            I approach each project with creativity,
+                                                                                                            attention to detail, and a dedication to delivering high-quality results.
+                                                                                                        </p>
+                                                                                                    </div> -->
             </div>
         </section>
         <!-- /SLIDER -->
