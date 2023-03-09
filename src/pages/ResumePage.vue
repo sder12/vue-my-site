@@ -24,7 +24,7 @@ export default {
             <section class="col-12 col-md-4 my-5 ms-border-right">
                 <!-- TITLE: name + cv -->
                 <div id="title">
-                    <h1>Sara Cetto</h1>
+                    <h1>Sara Cetto prova</h1>
                     <p>Here you can read my cv or downloading it, by clicking
                         the button belove:</p>
                     <a href="#" onclick="window.open('../src/assets/Cetto_Sara.pdf','_blank'); return false;"
