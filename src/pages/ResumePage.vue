@@ -41,9 +41,6 @@ export default {
                         <li v-for="(social, index) in this.store.socials" :key="index">
                             <a :href="social.link" target="_blank">
                                 <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
-                                <img :src="getImage(`../src/assets/img/social/${social.image}`)" :alt="social.name">
-                                <img :src="getImage(`/assets/img/social/${social.image}`)" :alt="social.name">
-                                <img :src="`/assets/img/social/${social.image}`" :alt="social.name">
                             </a>
                         </li>
                     </ul>
@@ -56,9 +53,6 @@ export default {
                         <ul class="d-flex flex-wrap">
                             <li v-for="(dev, index) in this.store.skillsDev" :key="index">
                                 <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
-                                <img :src="getImage(`/assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
-                                <img :src="getImage(`/src/assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
-                                <img :src="`../assets/img/${dev}.png`" alt="altro">
                             </li>
                         </ul>
                     </div>
