@@ -46,10 +46,10 @@ export default {
 
             <!-- FORM  -->
             <section id="contact-form" class="col-12 col-md-7">
-                <form @submit.prevent="submitForm">
+                <form name="contact" method="POST" data-netlify="true">
                     <!-- TO -->
                     <div class="mb-3 row">
-                        <label for="staticEmail" class="col-2 col-form-label">To:</label>
+                        <label for="staticEmail" class="col-12 col-sm-2 col-form-label fw-bold">To:</label>
                         <div class="col-10">
                             <input type="text" readonly class="form-control-plaintext" id="staticEmail"
                                 value="sara.cetto@gmail.com">
@@ -57,17 +57,17 @@ export default {
                     </div>
                     <!-- FROM email -->
                     <div class="mb-3 row">
-                        <label for="email" class="col-2 col-form-label">From: </label>
-                        <div class="col-10">
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        <label for="email" class="col-12 col-sm-2 col-form-label pe-2 fw-bold">From: </label>
+                        <div class="col-12 col-sm-10">
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
                                 placeholder="email">
                         </div>
                     </div>
                     <!-- TEXT -->
                     <div class="mb-3 row">
-                        <label for="email" class="col-2 col-form-label"></label>
-                        <div class="col-10">
-                            <textarea class="form-control" id="text" rows="4"
+                        <label for="text" class="col-2 col-form-label"></label>
+                        <div class="col-12 col-sm-10">
+                            <textarea class="form-control" id="text" rows="4" name="text"
                                 placeholder="Please type your message here..."></textarea>
                         </div>
                     </div>
@@ -118,5 +118,18 @@ section {
 #contact-form {
     padding-left: 3rem;
     padding-right: 3rem;
+}
+
+// MEDIA QUERY
+@media screen and (max-width: 576px) {
+    section {
+        padding: .1rem 1rem;
+
+    }
+
+    #contact-form {
+        padding: 2rem 0;
+
+    }
 }
 </style>

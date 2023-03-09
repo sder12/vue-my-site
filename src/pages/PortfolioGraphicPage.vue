@@ -43,15 +43,17 @@ export default {
     <main class="container-fluid">
         <!-- Introduction -->
         <section class="container">
-            <div class="row pt-5 pb-3">
-                <div class="col-6 py-5 bg-star">
+            <div class="row pt-5 pb-2">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 pt-5 pb-3 bg-star">
                     <h2 class="ms-border-bottom w-50 pb-3">Works</h2>
                     <h3>Graphic <br>
                         Designer</h3>
-                    <p>Here you take a look at my projects </p>
+                    <p>Here you can take a look at my projects. <br>
+                        I approach each project with creativity,
+                        attention to detail, and a dedication to delivering high-quality results. </p>
                 </div>
-                <div class="col-6 py-5">
-                    <ul class="d-flex flex-wrap w-75">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 pb-3 align-self-center">
+                    <ul class="d-flex flex-wrap w-100">
                         <li v-for="(graphic, index) in this.store.skillsGraphic" :key="index">
                             <img :src="getImage(`../assets/img/skills/graphic/${graphic}.png`)" :alt="graphic"
                                 class="ms-skills">
@@ -90,9 +92,13 @@ export default {
             </div>
             <!-- / STATIC -->
         </section>
-        <div class="d-flex justify-content-center align-items-center gap-4">
-            <h2 class="text-center my-5"> <i class="bi bi-cone"></i> Work in progress</h2>
 
+        <!-- WORK IN PROGRESS -->
+        <section id="work-in-progress" class="col-12 d-flex justify-content-center align-items-center gap-4">
+            <i class="bi bi-cone fs-1"></i>
+            <h4 class="text-center my-5">
+                Work in progress
+            </h4>
             <div>
                 <div class="snippet" data-title="dot-flashing">
                     <div class="stage">
@@ -100,7 +106,9 @@ export default {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- WORK IN PROGRESS -->
 
     </main>
 </template>
@@ -146,7 +154,6 @@ i {
         height: 100%;
     }
 }
-
 
 
 //DOT FLASHING
@@ -200,6 +207,29 @@ i {
     50%,
     100% {
         background-color: rgba(100, 100, 100, 0.2);
+    }
+}
+
+
+//MEDIA QUERY
+@media screen and (max-width: 880px) {
+    .dev-works {
+        padding: 6rem .4rem;
+
+
+        .hover_img p {
+            font-size: 1rem;
+        }
+
+        .hover_img h2 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .dev-works {
+        padding: 4rem 3rem;
     }
 }
 </style>

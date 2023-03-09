@@ -15,7 +15,8 @@ export default {
                     col: 7,
                     tech: 'HTML CSS JS PHP VUE LARAVEL API',
                     more: 'FullStack - Responsive - Figma',
-                    description: 'The Airbnb replica project involved creating a web platform with two connected projects, consisting of front-end and back-end components. The front-end was designed using the Vue framework and built with HTML, CSS, and JavaScript, while the back-end was created with Laravel and PHP. The graphics for the website were designed using Figma, and the server was hosted locally on MAMP. This combination of tools and technologies allowed for a customized and functional Airbnb replica with both front-end and back-end capabilities.',
+                    descriptionLong: 'The Airbnb replica project involved creating a web platform with two connected projects, consisting of front-end and back-end components. The front-end was designed using the Vue framework and built with HTML, CSS, and JavaScript, while the back-end was created with Laravel and PHP. The graphics for the website were designed using Figma, and the server was hosted locally on MAMP. This combination of tools and technologies allowed for a customized and functional Airbnb replica with both front-end and back-end capabilities.',
+                    description: 'The Airbnb replica project involved creating a web platform with two connected projects, consisting of front-end and back-end components. The front-end was designed using the Vue framework and built with HTML, CSS, and JavaScript, while the back-end was created with Laravel and PHP.',
                     git: "https://github.com/sder12/vue-boolbnb",
                 },
                 {
@@ -174,7 +175,7 @@ export default {
         <section class="container">
             <div class="row pt-5 pb-3">
                 <!-- Text -->
-                <div class="col-12 col-sm-10 col-md-6 col-lg-6 py-5 bg-star">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 pt-5 pb-3  bg-star">
                     <h2 class="ms-border-bottom w-50 pb-3">Works</h2>
                     <h3>Jr. Full Stack <br>
                         Web Developer</h3>
@@ -183,8 +184,8 @@ export default {
                         attention <br> to detail, and a dedication to delivering high-quality results. </p>
                 </div>
                 <!-- Tech -->
-                <div class="col-12 col-sm-10 col-md-6 col-lg-6 py-5">
-                    <ul class="d-flex flex-wrap w-75">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 pb-3 align-self-center">
+                    <ul class="d-flex flex-wrap w-100 ">
                         <li v-for="(dev, index) in this.store.skillsDev" :key="index">
                             <img :src="getImage(`../assets/img/skills/dev/${dev}.png`)" :alt="dev" class="ms-skills">
                         </li>
@@ -264,6 +265,29 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
+    }
+}
+
+
+//MEDIA QUERY
+@media screen and (max-width: 880px) {
+    .dev-works {
+        padding: 6rem .4rem;
+
+
+        .hover_img p {
+            font-size: 1rem;
+        }
+
+        .hover_img h2 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .dev-works {
+        padding: 4rem 3rem;
     }
 }
 </style>

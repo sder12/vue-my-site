@@ -72,7 +72,7 @@ export default {
 </script>
 
 <template>
-    <main class="container-fluid px-5">
+    <main class="container-fluid px-md-4 px-lg-5">
 
 
         <!-- JUMBOTRON -->
