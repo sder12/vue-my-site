@@ -9,7 +9,7 @@ export default {
     },
     methods: {
         getImage(imgPath) {
-            return new URL(`/img/social/${imgPath}`, import.meta.url).href;
+            return new URL(imgPath, import.meta.url).href;
         }
     }
 }
@@ -36,7 +36,8 @@ export default {
                     <ul class="d-flex justify-content-center py-4 px-md-3 ">
                         <li v-for="(social, index) in this.store.socials" :key="index" class="me-4">
                             <a :href="social.link" target="_blank">
-                                <img :src="getImage(social.image)" :alt="social.name" :id="`social-svg-${social.name}`">
+                                <img :src="getImage(`/img/social/${social.image}`)" :alt="social.name"
+                                    :id="`social-svg-${social.name}`">
                             </a>
                         </li>
                     </ul>

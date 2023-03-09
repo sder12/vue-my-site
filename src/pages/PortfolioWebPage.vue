@@ -14,9 +14,10 @@ export default {
                     bgcolor: "orange",
                     col: 7,
                     tech: 'HTML CSS JS PHP VUE LARAVEL API',
-                    more: 'FullStack - Responsive - Figma',
+                    more: 'FullStack - Responsive - Figma - Team Work',
                     descriptionLong: 'The Airbnb replica project involved creating a web platform with two connected projects, consisting of front-end and back-end components. The front-end was designed using the Vue framework and built with HTML, CSS, and JavaScript, while the back-end was created with Laravel and PHP. The graphics for the website were designed using Figma, and the server was hosted locally on MAMP. This combination of tools and technologies allowed for a customized and functional Airbnb replica with both front-end and back-end capabilities.',
                     description: 'The Airbnb replica project involved creating a web platform with two connected projects, consisting of front-end and back-end components. The front-end was designed using the Vue framework and built with HTML, CSS, and JavaScript, while the back-end was created with Laravel and PHP.',
+                    descriptionSm: 'Airbnb replica: made with Vue & Laravel.',
                     git: "https://github.com/sder12/vue-boolbnb",
                 },
                 {
@@ -28,6 +29,7 @@ export default {
                     tech: 'HTML CSS JS VUE',
                     more: 'Responsive - Figma',
                     description: "The portfolio website project was created using HTML, CSS, and JavaScript, with the Vue framework utilized to enhance the site's functionality and user experience. The site is designed to be responsive, ensuring that it is accessible and easily navigable across various devices and screen sizes.",
+                    descriptionSm: 'My portfolio project. Designed with Figma and developed with Vue.',
                     git: "https://github.com/sder12/vue-my-site",
                 },
                 {
@@ -39,6 +41,7 @@ export default {
                     tech: 'HTML CSS JS VUE',
                     more: 'Responsive',
                     description: "The Bakery website is an example of a website that combines multiple technologies including HTML, CSS, and JavaScript. It also utilizes the Vue framework and provides dynamic components such as galleries' sliders. The website is responsive, it can adapt its design to different screen sizes, ensuring optimal user experience on desktops, laptops, tablets, and mobile devices.",
+                    descriptionSm: 'Single page website made with Vue',
                     git: "https://github.com/sder12/proj-html-vuejs",
                 },
 
@@ -51,6 +54,7 @@ export default {
                     tech: 'HTML CSS JS VUE',
                     more: '',
                     description: 'The project involves creating a replica of the WhatsApp Web website using HTML, CSS, and JavaScript. The platform will allow users to send messages to others and receive responses after a period of time, mirroring the core functionality of the original WhatsApp Web site. ',
+                    descriptionSm: 'Replica of WhatsApp website with its functionality: send messages, receive a replay after a set time',
                     git: "https://github.com/sder12/vue-boolzapp",
                 },
                 {
@@ -62,6 +66,7 @@ export default {
                     tech: 'HTML CSS',
                     more: 'Responsive',
                     description: 'The homepage of a hypothetical site was created using only HTML and CSS, with media queries utilized to ensure a responsive layout.',
+                    descriptionSm: 'The homepage of a hypothetical site was created using only HTML and CSS, with media queries utilized to ensure a responsive layout.',
                     git: "https://github.com/sder12/htmlcss-responsive-layout",
                 },
 
@@ -74,6 +79,7 @@ export default {
                     tech: 'HTML CSS',
                     more: 'WebApp - Reponsive',
                     description: 'A website replica of the Spotify homepage created using HTML and CSS to design a web application that closely resembles the original site, featuring various sections such as the sidebar, personalized recommendations, and recently played tracks. ',
+                    descriptionSm: 'Spotify homepage replica: sidebar, personalized recommendations, and recently played tracks.',
                     git: "https://github.com/sder12/html-css-spotifyweb",
                 },
                 {
@@ -85,6 +91,7 @@ export default {
                     tech: 'HTML CSS',
                     more: '',
                     description: "Using HTML and CSS, a project has been created that closely resembles the Dropbox homepage, featuring a layout and design that replicates the original site's appearance ",
+                    descriptionSm: 'Using HTML and CSS, a project has been created that closely resembles the Dropbox homepage',
                     git: "https://github.com/sder12/htmlcss-dropbox",
                 },
 
@@ -97,6 +104,7 @@ export default {
                     tech: 'HTML CSS',
                     more: 'Responsive',
                     description: "A replica of the Playstation homepage created with HTML and CSS' languages. Bootstrap was used to construct the responsive layout.",
+                    descriptionSm: 'A replica of the Playstation homepage created with HTML, CSS and Bootstrap',
                     git: "https://github.com/sder12/htmlcss-playstation",
                 },
 
@@ -109,6 +117,7 @@ export default {
                     tech: 'HTML CSS',
                     more: '',
                     description: 'Using HTML and CSS, a project replica of the Discord homepage designed with varoius sections.',
+                    descriptionSm: 'Replica of Discord homepage with HTML and CSS.',
                     git: "https://github.com/sder12/htmlcss-discord",
                 },
                 {
@@ -120,6 +129,7 @@ export default {
                     tech: 'HTML CSS JS VUE',
                     more: '',
                     description: 'The DC Comics website replica is an example of a website that uses HTML, CSS, JavaScript, and the Vue framework to create an interactive and visually appealing replica of the original DC Comics homepage. ',
+                    descriptionSm: 'DC Comics website homepage made with Vue framework',
                     git: "https://github.com/sder12/vite-comics",
                 },
 
@@ -132,6 +142,7 @@ export default {
                     tech: 'HTML CSS',
                     more: 'API',
                     description: 'Recreating the Netflix homepage using HTML, CSS, and API calls.',
+                    descriptionSm: 'Recreating the Netflix homepage using HTML, CSS, and API calls.',
                     git: "https://github.com/sder12/vite-boolflix",
                 },
                 {
@@ -143,6 +154,7 @@ export default {
                     tech: 'HTML CSS',
                     more: 'Responsive',
                     description: 'A project that simulates a portfolio webiste. The languages used were HTML CSS with Bootstrap to create the responsive layout.',
+                    descriptionSm: 'A project that simulates a portfolio webiste.',
                     git: "https://github.com/sder12/html-css-bootstrap-freelancer",
                 },
 
@@ -209,11 +221,12 @@ export default {
 
                 <!-- HOVER-->
                 <div class="hover_img d-flex flex-column justify-content-center align-items-center">
-                    <h2>{{ work.title }}</h2>
+                    <h2 class="text-center">{{ work.title }}</h2>
 
-                    <p class="w-75 text-center">{{ work.description }}</p>
+                    <p class="w-75 text-center d-none d-sm-block">{{ work.description }}</p>
+                    <p class="w-75 text-center d-block d-sm-none">{{ work.descriptionSm }}</p>
 
-                    <p id="tech" class="fw-bold">{{ work.tech }}</p>
+                    <p id="tech" class="fw-bold w-75 text-center">{{ work.tech }}</p>
 
                     <p v-show="work.more" class="fw-bold">{{ work.more }}</p>
                     <div class="d-flex gap-3">
