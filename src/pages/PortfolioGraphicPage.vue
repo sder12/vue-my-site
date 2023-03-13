@@ -12,7 +12,7 @@ export default {
                     bgcolor: "purple",
                     col: 7,
                     tech: 'HTML  CSS  JS  ILLUSTRATOR',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    description: 'Publish a website about fonts & editorial partices.',
                     git: "https://fontsie.net/",
                     btnText: "fontsie.net"
                 },
@@ -22,9 +22,29 @@ export default {
                     bgcolor: "yellow",
                     col: 5,
                     tech: 'ILLUSTRATOR  FONTLAB',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    description: 'Project a font with fontlab',
                     git: "https://www.behance.net/gallery/133868807/SEASAR-typeface",
                     btnText: "behance"
+                },
+                {
+                    title: "Cover design",
+                    cover: "cover-design.png",
+                    bgcolor: "black",
+                    col: 5,
+                    tech: 'PHOTOSHOP ILLUSTRATOR',
+                    description: "Create a cover for Nick Hornby's book",
+                    git: "https://www.behance.net/gallery/125213743/Book-Cover-Deisgn-Nick-Hornby",
+                    btnText: "behance"
+                },
+                {
+                    title: "Brand identity",
+                    cover: "nio.png",
+                    bgcolor: "orange",
+                    col: 7,
+                    tech: 'ILLUSTRATOR PHOTOSHOP',
+                    description: 'Brand identity for the family business.',
+                    git: "",
+                    btnText: ""
                 },
 
 
@@ -81,7 +101,7 @@ export default {
 
 
 
-                    <div class="d-flex gap-3">
+                    <div class="d-flex gap-3" v-if="work.git">
                         <a :href="work.git" target="_blank" class="ms-btn ms-btn-yellow my-3">{{ work.btnText }}</a>
                         <!-- <a href="#" class="ms-btn ms-btn-orange my-3">details</a> -->
                     </div>
@@ -105,6 +125,7 @@ export default {
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- WORK IN PROGRESS -->
